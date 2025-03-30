@@ -28,6 +28,10 @@ int \mbox{\hyperlink{lista_8h_a9bb4d75d01a766ec2057efe46a3d70b3}{inserir\+Nefast
 \begin{DoxyCompactList}\small\item\em Insere um efeito nefasto na lista ligada. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{lista_8h_ad2b3bc5b87a84cd69b33b025efc28427}{remover\+Antena}} (\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista, int x, int y)
 \begin{DoxyCompactList}\small\item\em Remove uma antena da lista ligada e liberta a memória. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lista_8h_a526351b9f4ffa4832e1dcab2d17eb1e0}{ordenar\+Antenas}} (\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Ordena as antenas por ordem crescente de y. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lista_8h_a89b8e7b0ef5f33e9e1b28b295a96b569}{ordenar\+Efeitos}} (\mbox{\hyperlink{struct_nefasto}{Nefasto}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Ordena os efeitos nefastos por ordem crescente de y. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lista_8h_a35471234683ef7d40cd0de6c1356660f}{carregar\+Antenas}} (const char \texorpdfstring{$\ast$}{*}filename)
 \begin{DoxyCompactList}\small\item\em Carrega as antenas de um ficheiro para uma lista ligada. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_nefasto}{Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lista_8h_a79fd399db9519c94601c05922833492e}{detetar\+Efeitos\+Nefastos}} (\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}lista)
@@ -53,7 +57,11 @@ void \mbox{\hyperlink{lista_8h_a35e4bbf0bbc49e05b029f106feaa057e}{imprimir\+Matr
 int \mbox{\hyperlink{lista_8h_a46267c3e4103bcdfdab3672ec51f8cb5}{contar\+Linhas}} (const char \texorpdfstring{$\ast$}{*}filename)
 \begin{DoxyCompactList}\small\item\em Conta o número de linhas de um ficheiro. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{lista_8h_adc98073390dd52bac718629e9434431b}{contar\+Colunas}} (const char \texorpdfstring{$\ast$}{*}filename)
-\begin{DoxyCompactList}\small\item\em Conta o número de colunas de um ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Conta o número de colunas de um ficheiro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lista_8h_a850d419eadd9cca18f2f981591e671c7}{guardar\+Listas}} (\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}antenas, \mbox{\hyperlink{struct_nefasto}{Nefasto}} \texorpdfstring{$\ast$}{*}efeitos, const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Guarda as listas ligadas num ficheiro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lista_8h_aaba30e1e49097131a1a29c639d67ee14}{guardar\+Matriz}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matriz, int linhas, const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Guarda a matriz num ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -229,6 +237,50 @@ Calcula os efeitos nefastos das antenas.
 \begin{DoxyReturn}{Returns}
 Nefasto\texorpdfstring{$\ast$}{*} Lista de efeitos nefastos 
 \end{DoxyReturn}
+\Hypertarget{lista_8h_a850d419eadd9cca18f2f981591e671c7}\index{lista.h@{lista.h}!guardarListas@{guardarListas}}
+\index{guardarListas@{guardarListas}!lista.h@{lista.h}}
+\doxysubsubsection{\texorpdfstring{guardarListas()}{guardarListas()}}
+{\footnotesize\ttfamily \label{lista_8h_a850d419eadd9cca18f2f981591e671c7} 
+int guardar\+Listas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}}]{antenas}{, }\item[{\mbox{\hyperlink{struct_nefasto}{Nefasto}} \texorpdfstring{$\ast$}{*}}]{efeitos}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Guarda as listas ligadas num ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em antenas} & Lista de antenas a guardar \\
+\hline
+{\em efeitos} & Lista de efeitos nefastos a guardar \\
+\hline
+{\em filename} & Nome do ficheiro a guardar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 se as listas foram guardadas com sucesso, 0 caso contrário 
+\end{DoxyReturn}
+\Hypertarget{lista_8h_aaba30e1e49097131a1a29c639d67ee14}\index{lista.h@{lista.h}!guardarMatriz@{guardarMatriz}}
+\index{guardarMatriz@{guardarMatriz}!lista.h@{lista.h}}
+\doxysubsubsection{\texorpdfstring{guardarMatriz()}{guardarMatriz()}}
+{\footnotesize\ttfamily \label{lista_8h_aaba30e1e49097131a1a29c639d67ee14} 
+int guardar\+Matriz (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matriz}{, }\item[{int}]{linhas}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Guarda a matriz num ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matriz} & Matriz a guardar \\
+\hline
+{\em linhas} & Número de linhas da matriz \\
+\hline
+{\em filename} & Nome do ficheiro a guardar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 se a matriz foi guardada com sucesso, 0 caso contrário 
+\end{DoxyReturn}
 \Hypertarget{lista_8h_ab4daf968b49d14c5639b57bcec8d5ebc}\index{lista.h@{lista.h}!imprimirAntenas@{imprimirAntenas}}
 \index{imprimirAntenas@{imprimirAntenas}!lista.h@{lista.h}}
 \doxysubsubsection{\texorpdfstring{imprimirAntenas()}{imprimirAntenas()}}
@@ -387,6 +439,42 @@ Limpa a matriz.
 {\em colunas} & Número de colunas da matriz \\
 \hline
 \end{DoxyParams}
+\Hypertarget{lista_8h_a526351b9f4ffa4832e1dcab2d17eb1e0}\index{lista.h@{lista.h}!ordenarAntenas@{ordenarAntenas}}
+\index{ordenarAntenas@{ordenarAntenas}!lista.h@{lista.h}}
+\doxysubsubsection{\texorpdfstring{ordenarAntenas()}{ordenarAntenas()}}
+{\footnotesize\ttfamily \label{lista_8h_a526351b9f4ffa4832e1dcab2d17eb1e0} 
+int ordenar\+Antenas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_antena}{Antena}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Ordena as antenas por ordem crescente de y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de antenas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 se as antenas foram ordenadas com sucesso 
+\end{DoxyReturn}
+\Hypertarget{lista_8h_a89b8e7b0ef5f33e9e1b28b295a96b569}\index{lista.h@{lista.h}!ordenarEfeitos@{ordenarEfeitos}}
+\index{ordenarEfeitos@{ordenarEfeitos}!lista.h@{lista.h}}
+\doxysubsubsection{\texorpdfstring{ordenarEfeitos()}{ordenarEfeitos()}}
+{\footnotesize\ttfamily \label{lista_8h_a89b8e7b0ef5f33e9e1b28b295a96b569} 
+int ordenar\+Efeitos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_nefasto}{Nefasto}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Ordena os efeitos nefastos por ordem crescente de y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de efeitos nefastos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 se os efeitos nefastos foram ordenados com sucesso 
+\end{DoxyReturn}
 \Hypertarget{lista_8h_ad2b3bc5b87a84cd69b33b025efc28427}\index{lista.h@{lista.h}!removerAntena@{removerAntena}}
 \index{removerAntena@{removerAntena}!lista.h@{lista.h}}
 \doxysubsubsection{\texorpdfstring{removerAntena()}{removerAntena()}}

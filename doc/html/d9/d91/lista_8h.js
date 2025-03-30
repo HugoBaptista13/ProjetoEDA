@@ -10,6 +10,8 @@ var lista_8h =
     [ "criarAntena", "d9/d91/lista_8h.html#a45d602813bfa39b2875ba12549e962c5", null ],
     [ "criarNefasto", "d9/d91/lista_8h.html#a122b9f2b52f1adfef13e699f0c2e45a3", null ],
     [ "detetarEfeitosNefastos", "d9/d91/lista_8h.html#a79fd399db9519c94601c05922833492e", null ],
+    [ "guardarListas", "d9/d91/lista_8h.html#a850d419eadd9cca18f2f981591e671c7", null ],
+    [ "guardarMatriz", "d9/d91/lista_8h.html#aaba30e1e49097131a1a29c639d67ee14", null ],
     [ "imprimirAntenas", "d9/d91/lista_8h.html#ab4daf968b49d14c5639b57bcec8d5ebc", null ],
     [ "imprimirEfeitosNefastos", "d9/d91/lista_8h.html#a5c4a431732cfa1edd53e5380f36e692b", null ],
     [ "imprimirMatriz", "d9/d91/lista_8h.html#a35e4bbf0bbc49e05b029f106feaa057e", null ],
@@ -18,6 +20,8 @@ var lista_8h =
     [ "inserirNefasto", "d9/d91/lista_8h.html#a9bb4d75d01a766ec2057efe46a3d70b3", null ],
     [ "libertarMatriz", "d9/d91/lista_8h.html#a77484e72dda946869ea899022c71c498", null ],
     [ "limparMatriz", "d9/d91/lista_8h.html#a2ef6c255d66772419bfbd2e3b89b7df0", null ],
+    [ "ordenarAntenas", "d9/d91/lista_8h.html#a526351b9f4ffa4832e1dcab2d17eb1e0", null ],
+    [ "ordenarEfeitos", "d9/d91/lista_8h.html#a89b8e7b0ef5f33e9e1b28b295a96b569", null ],
     [ "removerAntena", "d9/d91/lista_8h.html#ad2b3bc5b87a84cd69b33b025efc28427", null ],
     [ "removerDaMatriz", "d9/d91/lista_8h.html#a9e6419cb7d67969125068034cb99be1e", null ]
 ];
