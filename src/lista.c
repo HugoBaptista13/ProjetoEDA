@@ -27,6 +27,14 @@ Antena* criarAntena(char freq, int x, int y) {
         printf("Erro ao alocar memoria!\n");
         return NULL;
     }
+    if (x >= MAX_COLUNAS || y >= MAX_LINHAS || x < 0 || y < 0) {
+        free(nova);
+        return NULL;
+    }
+    if (freq == '.' || freq == '#') { // Verifica se a frequência é válida
+        free(nova);
+        return NULL;
+    }
     nova->frequencia = freq;
     nova->x = x;
     nova->y = y;
@@ -45,6 +53,10 @@ Nefasto* criarNefasto(int x, int y) {
     Nefasto* novo = (Nefasto*)malloc(sizeof(Nefasto));
     if (!novo) {
         printf("Erro ao alocar memoria!\n");
+        return NULL;
+    }
+    if (x >= MAX_COLUNAS || y >= MAX_LINHAS || x < 0 || y < 0) {
+        free(novo);
         return NULL;
     }
     novo->x = x;
@@ -67,6 +79,7 @@ int inserirAntena(Antena** lista, char freq, int x, int y) {
     if (!nova) return 0;
     nova->prox = *lista;
     *lista = nova;
+    ordenarAntenas(lista);
     return 1;
 }
 
@@ -110,6 +123,54 @@ int removerAntena(Antena** lista, int x, int y) {
     if (!anterior) *lista = atual->prox;
     else anterior->prox = atual->prox;
     free(atual);
+    ordenarAntenas(lista);
+    return 1;
+}
+
+/**
+ * @brief Ordena as antenas por ordem crescente de y
+ * 
+ * @param lista Lista de antenas
+ * @return int 1 se as antenas foram ordenadas com sucesso
+ */
+int ordenarAntenas(Antena** lista) {
+    for (Antena* atual = *lista; atual; atual = atual->prox) {
+        for (Antena* seguinte = atual->prox; seguinte; seguinte = seguinte->prox) {
+            if (atual->y > seguinte->y) {
+                char freq = atual->frequencia;
+                int x = atual->x;
+                int y = atual->y;
+                atual->frequencia = seguinte->frequencia;
+                atual->x = seguinte->x;
+                atual->y = seguinte->y;
+                seguinte->frequencia = freq;
+                seguinte->x = x;
+                seguinte->y = y;
+            }
+        }
+    }
+    return 1;
+}
+
+/**
+ * @brief Ordena os efeitos nefastos por ordem crescente de y
+ * 
+ * @param lista Lista de efeitos nefastos
+ * @return int 1 se os efeitos nefastos foram ordenados com sucesso
+ */
+int ordenarEfeitos(Nefasto** lista) {
+    for (Nefasto* atual = *lista; atual; atual = atual->prox) {
+        for (Nefasto* seguinte = atual->prox; seguinte; seguinte = seguinte->prox) {
+            if (atual->y > seguinte->y) {
+                int x = atual->x;
+                int y = atual->y;
+                atual->x = seguinte->x;
+                atual->y = seguinte->y;
+                seguinte->x = x;
+                seguinte->y = y;
+            }
+        }
+    }
     return 1;
 }
 
@@ -129,10 +190,11 @@ Antena* carregarAntenas(const char* filename) {
     char linha[100];
     for (int y = 0; fgets(linha, sizeof(linha), file); y++) {
         for (int x = 0; linha[x] != '\0' && linha[x] != '\n'; x++) {
-            if (linha[x] != '.') inserirAntena(&lista, linha[x], x, y);
+            if (linha[x] != '.' && linha[x] != '#') inserirAntena(&lista, linha[x], x, y);
         }
     }
     fclose(file);
+    ordenarAntenas(&lista);
     return lista;
 }
 
@@ -156,6 +218,7 @@ Nefasto* detetarEfeitosNefastos(Antena* lista) {
             }
         }
     }
+    ordenarEfeitos(&efeitos);
     return efeitos;
 }
 
@@ -361,4 +424,67 @@ void imprimirMatriz(char** matriz, int linhas) {
         printf("%s\n", matriz[i]);
     }
     printf("\n------------\n");
+}
+
+/**
+ * @brief Guarda as listas ligadas num ficheiro
+ * 
+ * @param antenas Lista de antenas a guardar
+ * @param efeitos Lista de efeitos nefastos a guardar
+ * @param filename Nome do ficheiro a guardar
+ * @return int 1 se as listas foram guardadas com sucesso, 0 caso contrário
+ */
+int guardarListas(Antena* antenas, Nefasto* efeitos, const char* filename) {
+    FILE* file = fopen(filename, "w");
+    if (!file) {
+        printf("Erro ao abrir o ficheiro!\n");
+        return 0;
+    }
+    if (!antenas || !efeitos) {
+        fprintf(file, "Nada a guardar!\n");
+        fclose(file);
+        return 1;
+    }
+    fprintf(file, "\nLista de Antenas:\n");
+    fprintf(file, "Frequencia | Coordenadas\n");
+    fprintf(file, "------------------------\n");
+    for (Antena* atual = antenas; atual; atual = atual->prox) {
+        fprintf(file, "    %c      | (X:%d, Y:%d)\n", atual->frequencia, atual->x, atual->y);
+    }
+    fprintf(file, "------------------------\n");
+    fprintf(file, "\nEfeitos Nefastos:\n");
+    fprintf(file, "Coordenadas\n");
+    fprintf(file,"------------\n");
+    for (Nefasto* atual = efeitos; atual; atual = atual->prox) {
+        fprintf(file, "# |  (X:%d, Y:%d)\n", atual->x, atual->y);
+    }
+    fprintf(file, "------------\n");
+    fclose(file);
+    return 1;
+}
+
+/**
+ * @brief Guarda a matriz num ficheiro
+ * 
+ * @param matriz Matriz a guardar
+ * @param linhas Número de linhas da matriz
+ * @param filename Nome do ficheiro a guardar
+ * @return int 1 se a matriz foi guardada com sucesso, 0 caso contrário
+ */
+int guardarMatriz(char** matriz, int linhas, const char* filename) {
+    FILE* file = fopen(filename, "w");
+    if (!file) {
+        printf("Erro ao abrir o ficheiro!\n");
+        return 0;
+    }
+    if (!matriz) {
+        fprintf(file, "Nada a guardar!\n");
+        fclose(file);
+        return 1;
+    }
+    for (int i = 0; i < linhas; i++) {
+        fprintf(file, "%s\n", matriz[i]);
+    }
+    fclose(file);
+    return 1;
 }

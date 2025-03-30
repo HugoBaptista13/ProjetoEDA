@@ -50,3 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Output files
+src/listasOUT.txt
+src/matrizOUT.txt

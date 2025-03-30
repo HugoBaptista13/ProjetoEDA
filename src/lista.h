@@ -62,6 +62,20 @@ int inserirNefasto(Nefasto** lista, int x, int y);
  */
 int removerAntena(Antena** lista, int x, int y);
 /**
+ * @brief Ordena as antenas por ordem crescente de y
+ * 
+ * @param lista Lista de antenas
+ * @return int 1 se as antenas foram ordenadas com sucesso
+ */
+int ordenarAntenas(Antena** lista);
+/**
+ * @brief Ordena os efeitos nefastos por ordem crescente de y
+ * 
+ * @param lista Lista de efeitos nefastos
+ * @return int 1 se os efeitos nefastos foram ordenados com sucesso
+ */
+int ordenarEfeitos(Nefasto** lista);
+/**
  * @brief Carrega as antenas de um ficheiro para uma lista ligada
  * 
  * @param filename Nome do ficheiro a carregar
@@ -164,3 +178,21 @@ int contarLinhas(const char* filename);
  * @return int Número de colunas do ficheiro
  */
 int contarColunas(const char* filename);
+/**
+ * @brief Guarda as listas ligadas num ficheiro
+ * 
+ * @param antenas Lista de antenas a guardar
+ * @param efeitos Lista de efeitos nefastos a guardar
+ * @param filename Nome do ficheiro a guardar
+ * @return int 1 se as listas foram guardadas com sucesso, 0 caso contrário
+ */
+int guardarListas(Antena* antenas, Nefasto* efeitos, const char* filename);
+/**
+ * @brief Guarda a matriz num ficheiro
+ * 
+ * @param matriz Matriz a guardar
+ * @param linhas Número de linhas da matriz
+ * @param filename Nome do ficheiro a guardar
+ * @return int 1 se a matriz foi guardada com sucesso, 0 caso contrário
+ */
+int guardarMatriz(char** matriz, int linhas, const char* filename);

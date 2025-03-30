@@ -12,15 +12,17 @@
 #include "lista.h"
 
 int main() {
-    char ficheiro[] = "antenas.txt";
-    Antena* lista = carregarAntenas(ficheiro);
+    char ficheiroIN[] = "antenas.txt";
+    char ficheiro_listasOUT[] = "listasOUT.txt";
+    char ficheiro_matrizOUT[] = "matrizOUT.txt";
+    Antena* lista = carregarAntenas(ficheiroIN);
     if (!lista) return 1;
     imprimirAntenas(lista);
     
-    char** matriz = carregarMatriz(ficheiro);
+    char** matriz = carregarMatriz(ficheiroIN);
     if (!matriz) return 1;
-    int linhas = contarLinhas(ficheiro);
-    int colunas = contarColunas(ficheiro);
+    int linhas = contarLinhas(ficheiroIN);
+    int colunas = contarColunas(ficheiroIN);
     imprimirMatriz(matriz, linhas);
     
     // Teste de inserção
@@ -46,6 +48,10 @@ int main() {
     imprimirEfeitosNefastos(efeitos);
     atualizarMatriz(matriz, linhas, colunas, lista, efeitos);
     imprimirMatriz(matriz, linhas);
+
+    // Guardar listas e matriz
+    guardarListas(lista, efeitos, ficheiro_listasOUT);
+    guardarMatriz(matriz, linhas, ficheiro_matrizOUT);
     
     libertarMatriz(matriz, linhas);
     
