@@ -52,5 +52,5 @@ Mkfile.old
 dkms.conf
 
 # Output files
-src/listasOUT.txt
-src/matrizOUT.txt
+Fase1/src/listasOUT.txt
+Fase1/src/matrizOUT.txt

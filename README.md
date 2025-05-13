@@ -4,5 +4,10 @@ Repositório do Projeto de Estruturas de Dados Avançadas
 
 ## Diretórios do Projeto
 
-- [Código-fonte](src/)
-- [Documentação](doc/)
+# Fase 1
+- [Código-fonte](/Fase1/src/)
+- [Documentação](/Fase1/doc/)
+
+# Fase 2
+- [Código-fonte](/Fase2/src/)
+- [Documentação](/Fase2/doc/)
