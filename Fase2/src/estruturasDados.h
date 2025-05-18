@@ -55,11 +55,31 @@ typedef struct Nefastos {
     struct Nefastos *prox;
 } Nefastos;
 
+/**
+ * @brief Estrutura de dados para as adjacências do grafo
+ * @struct Adjacente
+ * @param codigo Código do vértice adjacente
+ * @param prox Apontador para a próxima adjacência
+ * @attention codigo é um inteiro
+ */
 typedef struct Adjacente {
     int codigo;
     struct Adjacente* prox;
 } Adjacente;
 
+/**
+ * @brief Estrutura de dados para os vértices do grafo
+ * @struct Vertice
+ * @param codigo Código do vértice
+ * @param antena Estrutura de dados da antena
+ * @param visitado Variável que indica se o vértice foi visitado (0 ou 1)
+ * @param adjacentes Lista de adjacentes do vértice
+ * @param prox Apontador para o próximo vértice
+ * @attention codigo é um inteiro
+ * @attention antena é uma estrutura de dados da antena com frequência, coordenadas x e y
+ * @attention visitado é um inteiro (0 ou 1)
+ * @attention adjacentes é um apontador para uma lista de ajdacências
+ */
 typedef struct Vertice {
     int codigo;
     Antena antena;
@@ -68,6 +88,14 @@ typedef struct Vertice {
     struct Vertice* prox;
 } Vertice;
 
+/**
+ * @brief Estrutura de dados para o grafo
+ * @struct Grafo
+ * @param vertices Lista de vértices do grafo
+ * @param numVertices Número de vértices no grafo
+ * @attention vertices é um apontador para a lista de vértices
+ * @attention numVertices é um inteiro
+ */
 typedef struct Grafo {
     Vertice* vertices;
     int numVertices;

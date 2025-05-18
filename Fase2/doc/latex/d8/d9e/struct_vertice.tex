@@ -1,0 +1,113 @@
+\doxysection{Vertice Struct Reference}
+\hypertarget{struct_vertice}{}\label{struct_vertice}\index{Vertice@{Vertice}}
+
+
+Estrutura de dados para os vértices do grafo.  
+
+
+
+
+{\ttfamily \#include $<$estruturas\+Dados.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_vertice_a817edef6773cad149ca7601c3e48b409}{codigo}}
+\item 
+\mbox{\hyperlink{struct_antena}{Antena}} \mbox{\hyperlink{struct_vertice_a2d97eaed2b02482c438338b65dbf7d83}{antena}}
+\item 
+int \mbox{\hyperlink{struct_vertice_ae8ebf04016dcaf2bbb4d6c68a1792f42}{visitado}}
+\item 
+\mbox{\hyperlink{struct_adjacente}{Adjacente}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_vertice_a8c6a0a94f0fd5ef30d0b49864b979853}{adjacentes}}
+\item 
+struct \mbox{\hyperlink{struct_vertice}{Vertice}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_vertice_af23ae50f1a9230531a4f4507eb457a4e}{prox}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura de dados para os vértices do grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Código do vértice \\
+\hline
+{\em antena} & Estrutura de dados da antena \\
+\hline
+{\em visitado} & Variável que indica se o vértice foi visitado (0 ou 1) \\
+\hline
+{\em adjacentes} & Lista de adjacentes do vértice \\
+\hline
+{\em prox} & Apontador para o próximo vértice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+codigo é um inteiro 
+
+antena é uma estrutura de dados da antena com frequência, coordenadas x e y 
+
+visitado é um inteiro (0 ou 1) 
+
+adjacentes é um apontador para uma lista de ajdacências 
+\end{DoxyAttention}
+
+
+Definition at line \mbox{\hyperlink{estruturas_dados_8h_source_l00083}{83}} of file \mbox{\hyperlink{estruturas_dados_8h_source}{estruturas\+Dados.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_vertice_a8c6a0a94f0fd5ef30d0b49864b979853}\index{Vertice@{Vertice}!adjacentes@{adjacentes}}
+\index{adjacentes@{adjacentes}!Vertice@{Vertice}}
+\doxysubsubsection{\texorpdfstring{adjacentes}{adjacentes}}
+{\footnotesize\ttfamily \label{struct_vertice_a8c6a0a94f0fd5ef30d0b49864b979853} 
+\mbox{\hyperlink{struct_adjacente}{Adjacente}}\texorpdfstring{$\ast$}{*} Vertice\+::adjacentes}
+
+
+
+Definition at line \mbox{\hyperlink{estruturas_dados_8h_source_l00087}{87}} of file \mbox{\hyperlink{estruturas_dados_8h_source}{estruturas\+Dados.\+h}}.
+
+\Hypertarget{struct_vertice_a2d97eaed2b02482c438338b65dbf7d83}\index{Vertice@{Vertice}!antena@{antena}}
+\index{antena@{antena}!Vertice@{Vertice}}
+\doxysubsubsection{\texorpdfstring{antena}{antena}}
+{\footnotesize\ttfamily \label{struct_vertice_a2d97eaed2b02482c438338b65dbf7d83} 
+\mbox{\hyperlink{struct_antena}{Antena}} Vertice\+::antena}
+
+
+
+Definition at line \mbox{\hyperlink{estruturas_dados_8h_source_l00085}{85}} of file \mbox{\hyperlink{estruturas_dados_8h_source}{estruturas\+Dados.\+h}}.
+
+\Hypertarget{struct_vertice_a817edef6773cad149ca7601c3e48b409}\index{Vertice@{Vertice}!codigo@{codigo}}
+\index{codigo@{codigo}!Vertice@{Vertice}}
+\doxysubsubsection{\texorpdfstring{codigo}{codigo}}
+{\footnotesize\ttfamily \label{struct_vertice_a817edef6773cad149ca7601c3e48b409} 
+int Vertice\+::codigo}
+
+
+
+Definition at line \mbox{\hyperlink{estruturas_dados_8h_source_l00084}{84}} of file \mbox{\hyperlink{estruturas_dados_8h_source}{estruturas\+Dados.\+h}}.
+
+\Hypertarget{struct_vertice_af23ae50f1a9230531a4f4507eb457a4e}\index{Vertice@{Vertice}!prox@{prox}}
+\index{prox@{prox}!Vertice@{Vertice}}
+\doxysubsubsection{\texorpdfstring{prox}{prox}}
+{\footnotesize\ttfamily \label{struct_vertice_af23ae50f1a9230531a4f4507eb457a4e} 
+struct \mbox{\hyperlink{struct_vertice}{Vertice}}\texorpdfstring{$\ast$}{*} Vertice\+::prox}
+
+
+
+Definition at line \mbox{\hyperlink{estruturas_dados_8h_source_l00088}{88}} of file \mbox{\hyperlink{estruturas_dados_8h_source}{estruturas\+Dados.\+h}}.
+
+\Hypertarget{struct_vertice_ae8ebf04016dcaf2bbb4d6c68a1792f42}\index{Vertice@{Vertice}!visitado@{visitado}}
+\index{visitado@{visitado}!Vertice@{Vertice}}
+\doxysubsubsection{\texorpdfstring{visitado}{visitado}}
+{\footnotesize\ttfamily \label{struct_vertice_ae8ebf04016dcaf2bbb4d6c68a1792f42} 
+int Vertice\+::visitado}
+
+
+
+Definition at line \mbox{\hyperlink{estruturas_dados_8h_source_l00086}{86}} of file \mbox{\hyperlink{estruturas_dados_8h_source}{estruturas\+Dados.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+estruturas\+Dados.\+h\end{DoxyCompactItemize}

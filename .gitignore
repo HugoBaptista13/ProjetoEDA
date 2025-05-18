@@ -54,3 +54,7 @@ dkms.conf
 # Output files
 Fase1/src/listasOUT.txt
 Fase1/src/matrizOUT.txt
+
+# VSCode
+.vscode/
+.vscode/*

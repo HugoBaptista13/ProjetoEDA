@@ -1,0 +1,102 @@
+\doxysection{main.\+c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{main.c@{main.c}}
+
+
+Implementação do programa principal.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}estruturas\+Dados.\+h"{}}\newline
+{\ttfamily \#include "{}grafo.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Função principal do programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação do programa principal. 
+
+\begin{DoxyAuthor}{Author}
+Hugo Baptista 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/13 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Função principal do programa. 
+
+Esta função inicializa o grafo, lê os dados de um ficheiro e executa as operações de busca e listagem de caminhos.
+
+\begin{DoxyReturn}{Returns}
+int Retorna 0 quando chega ao fim do programa. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00022}{22}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Criação\ de\ um\ grafo}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{char}\ nomeFicheiro[]\ =\ \textcolor{stringliteral}{"{}antenas.txt"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo\ =\ \mbox{\hyperlink{grafo_8c_a12065edee47794cd84c6f3e3397f447c}{lerGrafo}}(nomeFicheiro);}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{/*\ Teste\ de\ criação\ de\ grafo\ e\ adição\ de\ vértices\ e\ adjacentes }}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ Grafo\ grafo\ =\ criarGrafo(); }}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ \ \ \ //\ Adiciona\ vértices }}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ \ adicionarVertice(\&grafo,\ 1,\ 1,\ '0'); }}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ \ adicionarVertice(\&grafo,\ 2,\ 1,\ '0'); }}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ adicionarVertice(\&grafo,\ 3,\ 1,\ '0'); }}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ adicionarVertice(\&grafo,\ 4,\ 1,\ '0'); }}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ adicionarVertice(\&grafo,\ 5,\ 1,\ '0'); }}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ adicionarVertice(\&grafo,\ 6,\ 1,\ '0'); }}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ \ \ \  }}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ \ \ \ //\ Adiciona\ adjacentes }}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ adicionarAdjacente(\&grafo,\ 1,\ 2); }}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ \ \ \ adicionarAdjacente(\&grafo,\ 2,\ 3); }}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ \ \ \ adicionarAdjacente(\&grafo,\ 2,\ 4); }}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ \ \ \ adicionarAdjacente(\&grafo,\ 2,\ 5); }}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ \ \ \ adicionarAdjacente(\&grafo,\ 3,\ 6); }}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ \ adicionarAdjacente(\&grafo,\ 4,\ 6); }}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ \ \ \ adicionarAdjacente(\&grafo,\ 5,\ 6); }}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Exibe\ o\ grafo}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{grafo_8c_a5f4edf67784144a7ef4055943819ad9b}{escreverGrafo}}(grafo);}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Depth\ First\ Search\ (DFS):\(\backslash\)n"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{grafo_8c_ab8b56df9ee2d4b75d8cb0fead2599cf1}{DFS}}(grafo,\ 1);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{grafo_8c_aa66cfd0a83a884524ef3636d33edce7f}{desvisitarTodos}}(grafo);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)nBreadth\ First\ Search\ (BFS):\(\backslash\)n"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{grafo_8c_a282685d236de3fee95905846d570bad3}{BFS}}(grafo,\ 1);}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{grafo_8c_aa66cfd0a83a884524ef3636d33edce7f}{desvisitarTodos}}(grafo);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)nListar\ todos\ os\ caminhos:\(\backslash\)n"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{grafo_8c_a5f5f0d13e00ab9e0c7d8211a3a962a8e}{listarTodosCaminhos}}(grafo,\ 1,\ 4);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}

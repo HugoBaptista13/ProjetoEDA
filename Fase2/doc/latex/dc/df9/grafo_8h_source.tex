@@ -1,0 +1,33 @@
+\doxysection{grafo.\+h}
+\hypertarget{grafo_8h_source}{}\label{grafo_8h_source}\mbox{\hyperlink{grafo_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}estruturasDados.h"{}}}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00011}00011\ \textcolor{preprocessor}{\#ifndef\ GRAFO\_H}}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00012}00012\ \textcolor{preprocessor}{\#pragma\ region\ Criação\ de\ Estruturas}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00023}00023\ \mbox{\hyperlink{struct_antena}{Antena}}\ \mbox{\hyperlink{grafo_8h_aeff493120db5febaabe3f72dfa55a0c5}{criarAntena}}(\textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00033}00033\ \mbox{\hyperlink{struct_nefasto}{Nefasto}}\ \mbox{\hyperlink{grafo_8h_a68122fa78c544a7fa14cf79907db815c}{criarNefasto}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00041}00041\ \mbox{\hyperlink{struct_grafo}{Grafo}}\ \mbox{\hyperlink{grafo_8h_a18f15146c4b8e69b5462bd86933a4a6e}{criarGrafo}}();}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00054}00054\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{grafo_8h_a3ae198be169a402a0dfe97ce76574771}{criarVertice}}(\textcolor{keywordtype}{int}\ codigo,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ freq);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00064}00064\ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ \mbox{\hyperlink{grafo_8h_ad70ad4a6e6f10d67103bb24c810229e2}{criarAdjacente}}(\textcolor{keywordtype}{int}\ codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00076}00076\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00077}00077\ \textcolor{preprocessor}{\#pragma\ region\ Funções\ de\ Manipulação\ do\ Grafo}}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00078}00078\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8h_acb7fa33683de9620ce6ba8ea909bffea}{adicionarVertice}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ freq);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00089}00089\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8h_ad03a2eb43b24746fb3f6ce8dcf576554}{adicionarAdjacente}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ vertice,\ \textcolor{keywordtype}{int}\ adjacente);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00097}00097\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{grafo_8h_a5f4edf67784144a7ef4055943819ad9b}{escreverGrafo}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00106}00106\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8h_ad6856e8e3f355721da30812389385752}{libertarGrafo}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00115}00115\ \mbox{\hyperlink{struct_grafo}{Grafo}}\ \mbox{\hyperlink{grafo_8h_a12065edee47794cd84c6f3e3397f447c}{lerGrafo}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00116}00116\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00117}00117\ \textcolor{preprocessor}{\#pragma\ region\ Buscas}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00127}00127\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8h_ada1c562921870b63d244f7d59db172de}{desvisitarVertice}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00136}00136\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8h_aa66cfd0a83a884524ef3636d33edce7f}{desvisitarTodos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00146}00146\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8h_ab8b56df9ee2d4b75d8cb0fead2599cf1}{DFS}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ inicial);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00156}00156\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8h_a282685d236de3fee95905846d570bad3}{BFS}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ inicial);}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00167}00167\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8h_a5f5f0d13e00ab9e0c7d8211a3a962a8e}{listarTodosCaminhos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ inicial,\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{final});}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00168}00168\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00169}00169\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GRAFO\_H}}
+\DoxyCodeLine{\Hypertarget{grafo_8h_source_l00170}00170\ }
+
+\end{DoxyCode}
