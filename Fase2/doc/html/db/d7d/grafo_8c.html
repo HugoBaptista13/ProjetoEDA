@@ -125,9 +125,6 @@ Functions</h2></td></tr>
 <tr class="memitem:aeff493120db5febaabe3f72dfa55a0c5" id="r_aeff493120db5febaabe3f72dfa55a0c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/dbb/struct_antena.html">Antena</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeff493120db5febaabe3f72dfa55a0c5">criarAntena</a> (char freq, int x, int y)</td></tr>
 <tr class="memdesc:aeff493120db5febaabe3f72dfa55a0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma nova antena.  <br /></td></tr>
 <tr class="separator:aeff493120db5febaabe3f72dfa55a0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68122fa78c544a7fa14cf79907db815c" id="r_a68122fa78c544a7fa14cf79907db815c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dd9/struct_nefasto.html">Nefasto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68122fa78c544a7fa14cf79907db815c">criarNefasto</a> (int x, int y)</td></tr>
-<tr class="memdesc:a68122fa78c544a7fa14cf79907db815c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo efeito nefasto.  <br /></td></tr>
-<tr class="separator:a68122fa78c544a7fa14cf79907db815c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18f15146c4b8e69b5462bd86933a4a6e" id="r_a18f15146c4b8e69b5462bd86933a4a6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d62/struct_grafo.html">Grafo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18f15146c4b8e69b5462bd86933a4a6e">criarGrafo</a> ()</td></tr>
 <tr class="memdesc:a18f15146c4b8e69b5462bd86933a4a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo grafo.  <br /></td></tr>
 <tr class="separator:a18f15146c4b8e69b5462bd86933a4a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,33 +221,33 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 1 se a operação foi realizada com sucesso, 0 caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00161">161</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  161</span>                                                                 {</div>
-<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (grafo-&gt;numVertices &lt; 1) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (!grafo-&gt;vertices) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">if</span> (!grafo-&gt;vertices-&gt;prox) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo-&gt;vertices; atual; atual = atual-&gt;prox) {</div>
-<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">if</span> (atual-&gt;codigo == vertice) {</div>
-<div class="line"><span class="lineno">  168</span>            <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* temp = atual-&gt;adjacentes; temp; temp = temp-&gt;prox) { <span class="keywordflow">if</span> (temp-&gt;codigo == adjacente) <span class="keywordflow">return</span> 0;}</div>
-<div class="line"><span class="lineno">  169</span> </div>
-<div class="line"><span class="lineno">  170</span>            <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* novoAdjacente = <a class="code hl_function" href="#ad70ad4a6e6f10d67103bb24c810229e2">criarAdjacente</a>(adjacente);</div>
-<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">if</span> (!novoAdjacente) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  172</span>            </div>
-<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">if</span> (!atual-&gt;adjacentes) {atual-&gt;adjacentes = novoAdjacente;} </div>
-<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  175</span>                <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* tail = atual-&gt;adjacentes;</div>
-<div class="line"><span class="lineno">  176</span>                <span class="keywordflow">while</span> (tail-&gt;prox) {tail = tail-&gt;prox;}</div>
-<div class="line"><span class="lineno">  177</span>                tail-&gt;prox = novoAdjacente;</div>
-<div class="line"><span class="lineno">  178</span>            }</div>
-<div class="line"><span class="lineno">  179</span>            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  180</span>        }</div>
-<div class="line"><span class="lineno">  181</span>    }</div>
-<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  183</span>}</div>
-<div class="ttc" id="agrafo_8c_html_ad70ad4a6e6f10d67103bb24c810229e2"><div class="ttname"><a href="#ad70ad4a6e6f10d67103bb24c810229e2">criarAdjacente</a></div><div class="ttdeci">Adjacente * criarAdjacente(int codigo)</div><div class="ttdoc">Cria uma nova adjacência.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00109">grafo.c:109</a></div></div>
-<div class="ttc" id="astruct_adjacente_html"><div class="ttname"><a href="../../d3/d9d/struct_adjacente.html">Adjacente</a></div><div class="ttdoc">Estrutura de dados para as adjacências do grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d08/estruturas_dados_8h_source.html#l00065">estruturasDados.h:65</a></div></div>
-<div class="ttc" id="astruct_vertice_html"><div class="ttname"><a href="../../d8/d9e/struct_vertice.html">Vertice</a></div><div class="ttdoc">Estrutura de dados para os vértices do grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d08/estruturas_dados_8h_source.html#l00083">estruturasDados.h:83</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00141">141</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>                                                                 {</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">if</span> (grafo-&gt;numVertices &lt; 1) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">if</span> (!grafo-&gt;vertices) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">if</span> (!grafo-&gt;vertices-&gt;prox) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo-&gt;vertices; atual; atual = atual-&gt;prox) {</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">if</span> (atual-&gt;codigo == vertice) {</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* temp = atual-&gt;adjacentes; temp; temp = temp-&gt;prox) { <span class="keywordflow">if</span> (temp-&gt;codigo == adjacente) <span class="keywordflow">return</span> 0;}</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>            <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* novoAdjacente = <a class="code hl_function" href="#ad70ad4a6e6f10d67103bb24c810229e2">criarAdjacente</a>(adjacente);</div>
+<div class="line"><span class="lineno">  151</span>            <span class="keywordflow">if</span> (!novoAdjacente) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  152</span>            </div>
+<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">if</span> (!atual-&gt;adjacentes) {atual-&gt;adjacentes = novoAdjacente;} </div>
+<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  155</span>                <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* tail = atual-&gt;adjacentes;</div>
+<div class="line"><span class="lineno">  156</span>                <span class="keywordflow">while</span> (tail-&gt;prox) {tail = tail-&gt;prox;}</div>
+<div class="line"><span class="lineno">  157</span>                tail-&gt;prox = novoAdjacente;</div>
+<div class="line"><span class="lineno">  158</span>            }</div>
+<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  160</span>        }</div>
+<div class="line"><span class="lineno">  161</span>    }</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  163</span>}</div>
+<div class="ttc" id="agrafo_8c_html_ad70ad4a6e6f10d67103bb24c810229e2"><div class="ttname"><a href="#ad70ad4a6e6f10d67103bb24c810229e2">criarAdjacente</a></div><div class="ttdeci">Adjacente * criarAdjacente(int codigo)</div><div class="ttdoc">Cria uma nova adjacência.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00089">grafo.c:89</a></div></div>
+<div class="ttc" id="astruct_adjacente_html"><div class="ttname"><a href="../../d3/d9d/struct_adjacente.html">Adjacente</a></div><div class="ttdoc">Estrutura de dados para as adjacências do grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d08/estruturas_dados_8h_source.html#l00043">estruturasDados.h:43</a></div></div>
+<div class="ttc" id="astruct_vertice_html"><div class="ttname"><a href="../../d8/d9e/struct_vertice.html">Vertice</a></div><div class="ttdoc">Estrutura de dados para os vértices do grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d08/estruturas_dados_8h_source.html#l00061">estruturasDados.h:61</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -296,22 +293,22 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 1 se a operação foi realizada com sucesso, 0 caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00136">136</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  136</span>                                                            {</div>
-<div class="line"><span class="lineno">  137</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* novo = <a class="code hl_function" href="#a3ae198be169a402a0dfe97ce76574771">criarVertice</a>(<a class="code hl_variable" href="#a0756e0cd54a976f676de07c5ed5ee5bd">nextCod</a>++, x, y, freq);</div>
-<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (!novo) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  139</span> </div>
-<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> (!grafo-&gt;vertices) {grafo-&gt;vertices = novo;}</div>
-<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  142</span>        <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* tail = grafo-&gt;vertices;</div>
-<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">while</span> (tail-&gt;prox) {tail = tail-&gt;prox;}</div>
-<div class="line"><span class="lineno">  144</span>        tail-&gt;prox = novo;</div>
-<div class="line"><span class="lineno">  145</span>    }</div>
-<div class="line"><span class="lineno">  146</span>    grafo-&gt;numVertices++;</div>
-<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  148</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00116">116</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>                                                            {</div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* novo = <a class="code hl_function" href="#a3ae198be169a402a0dfe97ce76574771">criarVertice</a>(<a class="code hl_variable" href="#a0756e0cd54a976f676de07c5ed5ee5bd">nextCod</a>++, x, y, freq);</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">if</span> (!novo) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">if</span> (!grafo-&gt;vertices) {grafo-&gt;vertices = novo;}</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  122</span>        <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* tail = grafo-&gt;vertices;</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">while</span> (tail-&gt;prox) {tail = tail-&gt;prox;}</div>
+<div class="line"><span class="lineno">  124</span>        tail-&gt;prox = novo;</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span>    grafo-&gt;numVertices++;</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  128</span>}</div>
 <div class="ttc" id="agrafo_8c_html_a0756e0cd54a976f676de07c5ed5ee5bd"><div class="ttname"><a href="#a0756e0cd54a976f676de07c5ed5ee5bd">nextCod</a></div><div class="ttdeci">int nextCod</div><div class="ttdoc">Código do próximo vértice a ser adicionado ao grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00019">grafo.c:19</a></div></div>
-<div class="ttc" id="agrafo_8c_html_a3ae198be169a402a0dfe97ce76574771"><div class="ttname"><a href="#a3ae198be169a402a0dfe97ce76574771">criarVertice</a></div><div class="ttdeci">Vertice * criarVertice(int codigo, int x, int y, char freq)</div><div class="ttdoc">Cria um novo vértice.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00085">grafo.c:85</a></div></div>
+<div class="ttc" id="agrafo_8c_html_a3ae198be169a402a0dfe97ce76574771"><div class="ttname"><a href="#a3ae198be169a402a0dfe97ce76574771">criarVertice</a></div><div class="ttdeci">Vertice * criarVertice(int codigo, int x, int y, char freq)</div><div class="ttdoc">Cria um novo vértice.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00066">grafo.c:66</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -345,46 +342,46 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 1 se a busca foi realizada com sucesso, 0 caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00376">376</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  376</span>                                  {</div>
-<div class="line"><span class="lineno">  377</span>    <span class="keywordflow">if</span> (grafo.numVertices &lt; 1) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  378</span>    <span class="keywordflow">if</span> (!grafo.vertices) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  379</span>    <span class="keywordflow">if</span> (!grafo.vertices-&gt;prox) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  380</span> </div>
-<div class="line"><span class="lineno">  381</span>    <span class="keywordtype">int</span> *fila = malloc(grafo.numVertices * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><span class="lineno">  382</span>    <span class="keywordflow">if</span> (!fila) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  383</span>    <span class="keywordtype">int</span> front = 0, rear = 0;</div>
-<div class="line"><span class="lineno">  384</span> </div>
-<div class="line"><span class="lineno">  385</span>    fila[rear++] = inicial;</div>
-<div class="line"><span class="lineno">  386</span> </div>
-<div class="line"><span class="lineno">  387</span>    <span class="keywordflow">while</span> (front &lt; rear) {</div>
-<div class="line"><span class="lineno">  388</span>        <span class="keywordtype">int</span> codigo = fila[front++];</div>
-<div class="line"><span class="lineno">  389</span>        <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, codigo);</div>
-<div class="line"><span class="lineno">  390</span>        <span class="keywordflow">if</span> (atual &amp;&amp; !atual-&gt;visitado) {</div>
-<div class="line"><span class="lineno">  391</span>            atual-&gt;visitado = 1;</div>
-<div class="line"><span class="lineno">  392</span>            printf(<span class="stringliteral">&quot;%c|%d: (X: %d, Y : %d)&quot;</span>, atual-&gt;antena.frequencia, atual-&gt;codigo, atual-&gt;antena.x, atual-&gt;antena.y);</div>
-<div class="line"><span class="lineno">  393</span>            <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adj = atual-&gt;adjacentes; adj; adj = adj-&gt;prox) {</div>
-<div class="line"><span class="lineno">  394</span>                <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertAdj = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, adj-&gt;codigo);</div>
-<div class="line"><span class="lineno">  395</span>                <span class="keywordflow">if</span> (vertAdj &amp;&amp; !vertAdj-&gt;visitado) {</div>
-<div class="line"><span class="lineno">  396</span>                    <span class="keywordtype">int</span> estaNaFila = 0;</div>
-<div class="line"><span class="lineno">  397</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = front; k &lt; rear; k++) {</div>
-<div class="line"><span class="lineno">  398</span>                        <span class="keywordflow">if</span> (fila[k] == adj-&gt;codigo) {</div>
-<div class="line"><span class="lineno">  399</span>                            estaNaFila = 1;</div>
-<div class="line"><span class="lineno">  400</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  401</span>                        }</div>
-<div class="line"><span class="lineno">  402</span>                    }</div>
-<div class="line"><span class="lineno">  403</span>                    <span class="keywordflow">if</span> (!estaNaFila) fila[rear++] = adj-&gt;codigo;</div>
-<div class="line"><span class="lineno">  404</span>                }</div>
-<div class="line"><span class="lineno">  405</span>            }</div>
-<div class="line"><span class="lineno">  406</span>            <span class="keywordflow">if</span> (front &lt; rear) {</div>
-<div class="line"><span class="lineno">  407</span>                printf(<span class="stringliteral">&quot; -&gt; &quot;</span>);</div>
-<div class="line"><span class="lineno">  408</span>            }</div>
-<div class="line"><span class="lineno">  409</span>        }</div>
-<div class="line"><span class="lineno">  410</span>    }</div>
-<div class="line"><span class="lineno">  411</span>    free(fila);</div>
-<div class="line"><span class="lineno">  412</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  413</span>}</div>
-<div class="ttc" id="agrafo_8c_html_abd74136facdb68455c04092221b9e979"><div class="ttname"><a href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a></div><div class="ttdeci">static Vertice * encontrarVerticePorCod(Grafo grafo, int codigo)</div><div class="ttdoc">Encontra um vértice no grafo pelo seu código.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00288">grafo.c:288</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00356">356</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  356</span>                                  {</div>
+<div class="line"><span class="lineno">  357</span>    <span class="keywordflow">if</span> (grafo.numVertices &lt; 1) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  358</span>    <span class="keywordflow">if</span> (!grafo.vertices) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  359</span>    <span class="keywordflow">if</span> (!grafo.vertices-&gt;prox) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  360</span> </div>
+<div class="line"><span class="lineno">  361</span>    <span class="keywordtype">int</span> *fila = malloc(grafo.numVertices * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">if</span> (!fila) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  363</span>    <span class="keywordtype">int</span> front = 0, rear = 0;</div>
+<div class="line"><span class="lineno">  364</span> </div>
+<div class="line"><span class="lineno">  365</span>    fila[rear++] = inicial;</div>
+<div class="line"><span class="lineno">  366</span> </div>
+<div class="line"><span class="lineno">  367</span>    <span class="keywordflow">while</span> (front &lt; rear) {</div>
+<div class="line"><span class="lineno">  368</span>        <span class="keywordtype">int</span> codigo = fila[front++];</div>
+<div class="line"><span class="lineno">  369</span>        <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, codigo);</div>
+<div class="line"><span class="lineno">  370</span>        <span class="keywordflow">if</span> (atual &amp;&amp; !atual-&gt;visitado) {</div>
+<div class="line"><span class="lineno">  371</span>            atual-&gt;visitado = 1;</div>
+<div class="line"><span class="lineno">  372</span>            printf(<span class="stringliteral">&quot;%c|%d: (X: %d, Y : %d)&quot;</span>, atual-&gt;antena.frequencia, atual-&gt;codigo, atual-&gt;antena.x, atual-&gt;antena.y);</div>
+<div class="line"><span class="lineno">  373</span>            <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adj = atual-&gt;adjacentes; adj; adj = adj-&gt;prox) {</div>
+<div class="line"><span class="lineno">  374</span>                <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertAdj = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, adj-&gt;codigo);</div>
+<div class="line"><span class="lineno">  375</span>                <span class="keywordflow">if</span> (vertAdj &amp;&amp; !vertAdj-&gt;visitado) {</div>
+<div class="line"><span class="lineno">  376</span>                    <span class="keywordtype">int</span> estaNaFila = 0;</div>
+<div class="line"><span class="lineno">  377</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = front; k &lt; rear; k++) {</div>
+<div class="line"><span class="lineno">  378</span>                        <span class="keywordflow">if</span> (fila[k] == adj-&gt;codigo) {</div>
+<div class="line"><span class="lineno">  379</span>                            estaNaFila = 1;</div>
+<div class="line"><span class="lineno">  380</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  381</span>                        }</div>
+<div class="line"><span class="lineno">  382</span>                    }</div>
+<div class="line"><span class="lineno">  383</span>                    <span class="keywordflow">if</span> (!estaNaFila) fila[rear++] = adj-&gt;codigo;</div>
+<div class="line"><span class="lineno">  384</span>                }</div>
+<div class="line"><span class="lineno">  385</span>            }</div>
+<div class="line"><span class="lineno">  386</span>            <span class="keywordflow">if</span> (front &lt; rear) {</div>
+<div class="line"><span class="lineno">  387</span>                printf(<span class="stringliteral">&quot; -&gt; &quot;</span>);</div>
+<div class="line"><span class="lineno">  388</span>            }</div>
+<div class="line"><span class="lineno">  389</span>        }</div>
+<div class="line"><span class="lineno">  390</span>    }</div>
+<div class="line"><span class="lineno">  391</span>    free(fila);</div>
+<div class="line"><span class="lineno">  392</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  393</span>}</div>
+<div class="ttc" id="agrafo_8c_html_abd74136facdb68455c04092221b9e979"><div class="ttname"><a href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a></div><div class="ttdeci">static Vertice * encontrarVerticePorCod(Grafo grafo, int codigo)</div><div class="ttdoc">Encontra um vértice no grafo pelo seu código.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00268">grafo.c:268</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -414,17 +411,17 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Adjacente* Retorna um apontador para a adjacência criada. </dd></dl>
 <dl class="section attention"><dt>Attention</dt><dd>O código é um inteiro. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00109">109</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  109</span>                                      {</div>
-<div class="line"><span class="lineno">  110</span>    <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* novo = (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>));</div>
-<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span> (!novo) {</div>
-<div class="line"><span class="lineno">  112</span>        printf(<span class="stringliteral">&quot;Erro ao alocar memoria!\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">  114</span>    }</div>
-<div class="line"><span class="lineno">  115</span>    novo-&gt;codigo = codigo;</div>
-<div class="line"><span class="lineno">  116</span>    novo-&gt;prox = NULL;</div>
-<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span> novo;</div>
-<div class="line"><span class="lineno">  118</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00089">89</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>                                      {</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* novo = (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>));</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">if</span> (!novo) {</div>
+<div class="line"><span class="lineno">   92</span>        printf(<span class="stringliteral">&quot;Erro ao alocar memoria!\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   94</span>    }</div>
+<div class="line"><span class="lineno">   95</span>    novo-&gt;codigo = codigo;</div>
+<div class="line"><span class="lineno">   96</span>    novo-&gt;prox = NULL;</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> novo;</div>
+<div class="line"><span class="lineno">   98</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -495,55 +492,14 @@ Variables</h2></td></tr>
 <p>Esta função inicializa um grafo vazio, com 0 vértices.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d7/d62/struct_grafo.html" title="Estrutura de dados para o grafo.">Grafo</a> Retorna o grafo criado. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00065">65</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>                   {</div>
-<div class="line"><span class="lineno">   66</span>    <a class="code hl_struct" href="../../d7/d62/struct_grafo.html">Grafo</a> novo;</div>
-<div class="line"><span class="lineno">   67</span>    novo.vertices = NULL;</div>
-<div class="line"><span class="lineno">   68</span>    novo.numVertices = 0;</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> novo;</div>
-<div class="line"><span class="lineno">   70</span>}</div>
-<div class="ttc" id="astruct_grafo_html"><div class="ttname"><a href="../../d7/d62/struct_grafo.html">Grafo</a></div><div class="ttdoc">Estrutura de dados para o grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d08/estruturas_dados_8h_source.html#l00099">estruturasDados.h:99</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a68122fa78c544a7fa14cf79907db815c" name="a68122fa78c544a7fa14cf79907db815c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68122fa78c544a7fa14cf79907db815c">&#9670;&#160;</a></span>criarNefasto()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d5/dd9/struct_nefasto.html">Nefasto</a> criarNefasto </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Cria um novo efeito nefasto. </p>
-<p>Esta função cria um novo efeito nefasto e o inicializa com as coordenadas especificadas.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>Coordenada x do efeito nefasto. </td></tr>
-    <tr><td class="paramname">y</td><td>Coordenada y do efeito nefasto. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d5/dd9/struct_nefasto.html" title="Estrutura de dados para os nefastos.">Nefasto</a> Retorna o efeito nefasto criado. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00050">50</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>                                    {</div>
-<div class="line"><span class="lineno">   51</span>    <a class="code hl_struct" href="../../d5/dd9/struct_nefasto.html">Nefasto</a> novo;</div>
-<div class="line"><span class="lineno">   52</span>    novo.x = x;</div>
-<div class="line"><span class="lineno">   53</span>    novo.y = y;</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> novo;</div>
-<div class="line"><span class="lineno">   55</span>}</div>
-<div class="ttc" id="astruct_nefasto_html"><div class="ttname"><a href="../../d5/dd9/struct_nefasto.html">Nefasto</a></div><div class="ttdoc">Estrutura de dados para os nefastos.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d08/estruturas_dados_8h_source.html#l00032">estruturasDados.h:32</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00047">47</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>                   {</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_struct" href="../../d7/d62/struct_grafo.html">Grafo</a> novo;</div>
+<div class="line"><span class="lineno">   49</span>    novo.vertices = NULL;</div>
+<div class="line"><span class="lineno">   50</span>    novo.numVertices = 0;</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">return</span> novo;</div>
+<div class="line"><span class="lineno">   52</span>}</div>
+<div class="ttc" id="astruct_grafo_html"><div class="ttname"><a href="../../d7/d62/struct_grafo.html">Grafo</a></div><div class="ttdoc">Estrutura de dados para o grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d08/estruturas_dados_8h_source.html#l00077">estruturasDados.h:77</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -590,20 +546,20 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Vertice* Retorna um apontador para o vértice criado. </dd></dl>
 <dl class="section attention"><dt>Attention</dt><dd>O código é um inteiro, x e y são inteiros, freq é um char. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00085">85</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>                                                           {</div>
-<div class="line"><span class="lineno">   86</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* novo = (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>));</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (!novo) {</div>
-<div class="line"><span class="lineno">   88</span>        printf(<span class="stringliteral">&quot;Erro ao alocar memoria!\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">   90</span>    }</div>
-<div class="line"><span class="lineno">   91</span>    novo-&gt;codigo = codigo;</div>
-<div class="line"><span class="lineno">   92</span>    novo-&gt;antena = <a class="code hl_function" href="#aeff493120db5febaabe3f72dfa55a0c5">criarAntena</a> (freq, x, y);</div>
-<div class="line"><span class="lineno">   93</span>    novo-&gt;visitado = 0;</div>
-<div class="line"><span class="lineno">   94</span>    novo-&gt;prox = NULL;</div>
-<div class="line"><span class="lineno">   95</span>    novo-&gt;adjacentes = NULL;</div>
-<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">return</span> novo;</div>
-<div class="line"><span class="lineno">   97</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00066">66</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                           {</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* novo = (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>));</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (!novo) {</div>
+<div class="line"><span class="lineno">   69</span>        printf(<span class="stringliteral">&quot;Erro ao alocar memoria!\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+<div class="line"><span class="lineno">   72</span>    novo-&gt;codigo = codigo;</div>
+<div class="line"><span class="lineno">   73</span>    novo-&gt;antena = <a class="code hl_function" href="#aeff493120db5febaabe3f72dfa55a0c5">criarAntena</a> (freq, x, y);</div>
+<div class="line"><span class="lineno">   74</span>    novo-&gt;visitado = 0;</div>
+<div class="line"><span class="lineno">   75</span>    novo-&gt;prox = NULL;</div>
+<div class="line"><span class="lineno">   76</span>    novo-&gt;adjacentes = NULL;</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">return</span> novo;</div>
+<div class="line"><span class="lineno">   78</span>}</div>
 <div class="ttc" id="agrafo_8c_html_aeff493120db5febaabe3f72dfa55a0c5"><div class="ttname"><a href="#aeff493120db5febaabe3f72dfa55a0c5">criarAntena</a></div><div class="ttdeci">Antena criarAntena(char freq, int x, int y)</div><div class="ttdoc">Cria uma nova antena.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00032">grafo.c:32</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -633,13 +589,13 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 1 se a operação foi realizada com sucesso. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00326">326</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  326</span>                                 {</div>
-<div class="line"><span class="lineno">  327</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
-<div class="line"><span class="lineno">  328</span>        atual-&gt;visitado = 0;</div>
-<div class="line"><span class="lineno">  329</span>    }</div>
-<div class="line"><span class="lineno">  330</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  331</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00306">306</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  306</span>                                 {</div>
+<div class="line"><span class="lineno">  307</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
+<div class="line"><span class="lineno">  308</span>        atual-&gt;visitado = 0;</div>
+<div class="line"><span class="lineno">  309</span>    }</div>
+<div class="line"><span class="lineno">  310</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  311</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -673,16 +629,16 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 1 se a operação foi realizada com sucesso, 0 caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00307">307</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  307</span>                                               {</div>
-<div class="line"><span class="lineno">  308</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
-<div class="line"><span class="lineno">  309</span>        <span class="keywordflow">if</span> (atual-&gt;codigo == codigo) {</div>
-<div class="line"><span class="lineno">  310</span>            atual-&gt;visitado = 0;</div>
-<div class="line"><span class="lineno">  311</span>            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  312</span>        }</div>
-<div class="line"><span class="lineno">  313</span>    }</div>
-<div class="line"><span class="lineno">  314</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  315</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00287">287</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>                                               {</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
+<div class="line"><span class="lineno">  289</span>        <span class="keywordflow">if</span> (atual-&gt;codigo == codigo) {</div>
+<div class="line"><span class="lineno">  290</span>            atual-&gt;visitado = 0;</div>
+<div class="line"><span class="lineno">  291</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  292</span>        }</div>
+<div class="line"><span class="lineno">  293</span>    }</div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  295</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -716,30 +672,30 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 1 se a busca foi realizada com sucesso, 0 caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00343">343</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  343</span>                                  {</div>
-<div class="line"><span class="lineno">  344</span>    <span class="keywordflow">if</span> (grafo.numVertices &lt; 1) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  345</span>    <span class="keywordflow">if</span> (!grafo.vertices) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  346</span>    <span class="keywordflow">if</span> (!grafo.vertices-&gt;prox) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  347</span> </div>
-<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
-<div class="line"><span class="lineno">  349</span>        <span class="keywordflow">if</span> (atual-&gt;codigo == inicial &amp;&amp; !atual-&gt;visitado) {</div>
-<div class="line"><span class="lineno">  350</span>            atual-&gt;visitado = 1;</div>
-<div class="line"><span class="lineno">  351</span>            printf(<span class="stringliteral">&quot;%c|%d: (X: %d, Y : %d)&quot;</span>, atual-&gt;antena.frequencia, atual-&gt;codigo, atual-&gt;antena.x, atual-&gt;antena.y);</div>
-<div class="line"><span class="lineno">  352</span>            <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adj = atual-&gt;adjacentes; adj; adj = adj-&gt;prox) {</div>
-<div class="line"><span class="lineno">  353</span>                <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertAdj = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, adj-&gt;codigo);</div>
-<div class="line"><span class="lineno">  354</span>                <span class="keywordflow">if</span> (vertAdj &amp;&amp; !vertAdj-&gt;visitado) {</div>
-<div class="line"><span class="lineno">  355</span>                    printf(<span class="stringliteral">&quot; -&gt; &quot;</span>);</div>
-<div class="line"><span class="lineno">  356</span>                    <a class="code hl_function" href="#ab8b56df9ee2d4b75d8cb0fead2599cf1">DFS</a>(grafo, vertAdj-&gt;codigo);</div>
-<div class="line"><span class="lineno">  357</span>                }</div>
-<div class="line"><span class="lineno">  358</span>            }</div>
-<div class="line"><span class="lineno">  359</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  360</span>        }</div>
-<div class="line"><span class="lineno">  361</span>    }</div>
-<div class="line"><span class="lineno">  362</span> </div>
-<div class="line"><span class="lineno">  363</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  364</span>}</div>
-<div class="ttc" id="agrafo_8c_html_ab8b56df9ee2d4b75d8cb0fead2599cf1"><div class="ttname"><a href="#ab8b56df9ee2d4b75d8cb0fead2599cf1">DFS</a></div><div class="ttdeci">int DFS(Grafo grafo, int inicial)</div><div class="ttdoc">Realiza uma busca em profundidade (DFS) no grafo a partir de um vértice inicial.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00343">grafo.c:343</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00323">323</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  323</span>                                  {</div>
+<div class="line"><span class="lineno">  324</span>    <span class="keywordflow">if</span> (grafo.numVertices &lt; 1) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  325</span>    <span class="keywordflow">if</span> (!grafo.vertices) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  326</span>    <span class="keywordflow">if</span> (!grafo.vertices-&gt;prox) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
+<div class="line"><span class="lineno">  329</span>        <span class="keywordflow">if</span> (atual-&gt;codigo == inicial &amp;&amp; !atual-&gt;visitado) {</div>
+<div class="line"><span class="lineno">  330</span>            atual-&gt;visitado = 1;</div>
+<div class="line"><span class="lineno">  331</span>            printf(<span class="stringliteral">&quot;%c|%d: (X: %d, Y : %d)&quot;</span>, atual-&gt;antena.frequencia, atual-&gt;codigo, atual-&gt;antena.x, atual-&gt;antena.y);</div>
+<div class="line"><span class="lineno">  332</span>            <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adj = atual-&gt;adjacentes; adj; adj = adj-&gt;prox) {</div>
+<div class="line"><span class="lineno">  333</span>                <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertAdj = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, adj-&gt;codigo);</div>
+<div class="line"><span class="lineno">  334</span>                <span class="keywordflow">if</span> (vertAdj &amp;&amp; !vertAdj-&gt;visitado) {</div>
+<div class="line"><span class="lineno">  335</span>                    printf(<span class="stringliteral">&quot; -&gt; &quot;</span>);</div>
+<div class="line"><span class="lineno">  336</span>                    <a class="code hl_function" href="#ab8b56df9ee2d4b75d8cb0fead2599cf1">DFS</a>(grafo, vertAdj-&gt;codigo);</div>
+<div class="line"><span class="lineno">  337</span>                }</div>
+<div class="line"><span class="lineno">  338</span>            }</div>
+<div class="line"><span class="lineno">  339</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  340</span>        }</div>
+<div class="line"><span class="lineno">  341</span>    }</div>
+<div class="line"><span class="lineno">  342</span> </div>
+<div class="line"><span class="lineno">  343</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  344</span>}</div>
+<div class="ttc" id="agrafo_8c_html_ab8b56df9ee2d4b75d8cb0fead2599cf1"><div class="ttname"><a href="#ab8b56df9ee2d4b75d8cb0fead2599cf1">DFS</a></div><div class="ttdeci">int DFS(Grafo grafo, int inicial)</div><div class="ttdoc">Realiza uma busca em profundidade (DFS) no grafo a partir de um vértice inicial.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00323">grafo.c:323</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -781,15 +737,15 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vertice* Retorna um apontador para o vértice encontrado ou NULL se não encontrado. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00288">288</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  288</span>                                                                {</div>
-<div class="line"><span class="lineno">  289</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
-<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">if</span> (atual-&gt;codigo == codigo) {</div>
-<div class="line"><span class="lineno">  291</span>            <span class="keywordflow">return</span> atual;</div>
-<div class="line"><span class="lineno">  292</span>        }</div>
-<div class="line"><span class="lineno">  293</span>    }</div>
-<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">  295</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00268">268</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  268</span>                                                                {</div>
+<div class="line"><span class="lineno">  269</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
+<div class="line"><span class="lineno">  270</span>        <span class="keywordflow">if</span> (atual-&gt;codigo == codigo) {</div>
+<div class="line"><span class="lineno">  271</span>            <span class="keywordflow">return</span> atual;</div>
+<div class="line"><span class="lineno">  272</span>        }</div>
+<div class="line"><span class="lineno">  273</span>    }</div>
+<div class="line"><span class="lineno">  274</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  275</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -817,24 +773,24 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00192">192</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  192</span>                                {</div>
-<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">if</span> (grafo.numVertices &lt; 1) {</div>
-<div class="line"><span class="lineno">  194</span>        printf(<span class="stringliteral">&quot;Grafo vazio!\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  196</span>    }</div>
-<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
-<div class="line"><span class="lineno">  198</span>        printf(<span class="stringliteral">&quot;Vertice %d: (X: %d, Y: %d) - FREQ: %c\n&quot;</span>, atual-&gt;codigo, atual-&gt;antena.x, atual-&gt;antena.y, atual-&gt;antena.frequencia);</div>
-<div class="line"><span class="lineno">  199</span>        <span class="keywordflow">if</span> (atual-&gt;adjacentes == NULL) {</div>
-<div class="line"><span class="lineno">  200</span>            printf(<span class="stringliteral">&quot;-&gt;  Sem adjacentes\n\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  201</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  202</span>        }</div>
-<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adj = atual-&gt;adjacentes; adj; adj = adj-&gt;prox) {</div>
-<div class="line"><span class="lineno">  204</span>            printf(<span class="stringliteral">&quot;-&gt;  Adjacente: %d\n&quot;</span>, adj-&gt;codigo);</div>
-<div class="line"><span class="lineno">  205</span>        }</div>
-<div class="line"><span class="lineno">  206</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  207</span>    }</div>
-<div class="line"><span class="lineno">  208</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00172">172</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>                                {</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">if</span> (grafo.numVertices &lt; 1) {</div>
+<div class="line"><span class="lineno">  174</span>        printf(<span class="stringliteral">&quot;Grafo vazio!\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  175</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  176</span>    }</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
+<div class="line"><span class="lineno">  178</span>        printf(<span class="stringliteral">&quot;Vertice %d: (X: %d, Y: %d) - FREQ: %c\n&quot;</span>, atual-&gt;codigo, atual-&gt;antena.x, atual-&gt;antena.y, atual-&gt;antena.frequencia);</div>
+<div class="line"><span class="lineno">  179</span>        <span class="keywordflow">if</span> (atual-&gt;adjacentes == NULL) {</div>
+<div class="line"><span class="lineno">  180</span>            printf(<span class="stringliteral">&quot;-&gt;  Sem adjacentes\n\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  182</span>        }</div>
+<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adj = atual-&gt;adjacentes; adj; adj = adj-&gt;prox) {</div>
+<div class="line"><span class="lineno">  184</span>            printf(<span class="stringliteral">&quot;-&gt;  Adjacente: %d\n&quot;</span>, adj-&gt;codigo);</div>
+<div class="line"><span class="lineno">  185</span>        }</div>
+<div class="line"><span class="lineno">  186</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  187</span>    }</div>
+<div class="line"><span class="lineno">  188</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -863,39 +819,39 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d7/d62/struct_grafo.html" title="Estrutura de dados para o grafo.">Grafo</a> Retorna o grafo lido do ficheiro. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00242">242</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  242</span>                                         {</div>
-<div class="line"><span class="lineno">  243</span>    FILE* file = fopen(nomeFicheiro, <span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">if</span> (!file) {</div>
-<div class="line"><span class="lineno">  245</span>        printf(<span class="stringliteral">&quot;Erro ao abrir o ficheiro!\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  246</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#a18f15146c4b8e69b5462bd86933a4a6e">criarGrafo</a>();</div>
-<div class="line"><span class="lineno">  247</span>    }</div>
-<div class="line"><span class="lineno">  248</span> </div>
-<div class="line"><span class="lineno">  249</span>    <a class="code hl_struct" href="../../d7/d62/struct_grafo.html">Grafo</a> grafo = <a class="code hl_function" href="#a18f15146c4b8e69b5462bd86933a4a6e">criarGrafo</a>();</div>
-<div class="line"><span class="lineno">  250</span> </div>
-<div class="line"><span class="lineno">  251</span>    <span class="keywordtype">char</span> linha[100];</div>
-<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; fgets(linha, <span class="keyword">sizeof</span>(linha), file); y++) {</div>
-<div class="line"><span class="lineno">  253</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; linha[x] != <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; linha[x] != <span class="charliteral">&#39;\n&#39;</span>; x++) {</div>
-<div class="line"><span class="lineno">  254</span>            <span class="keywordflow">if</span> (linha[x] != <span class="charliteral">&#39;.&#39;</span> &amp;&amp; linha[x] != <span class="charliteral">&#39;#&#39;</span>) </div>
-<div class="line"><span class="lineno">  255</span>                <a class="code hl_function" href="#acb7fa33683de9620ce6ba8ea909bffea">adicionarVertice</a>(&amp;grafo, x, y, linha[x]);</div>
-<div class="line"><span class="lineno">  256</span>        }</div>
-<div class="line"><span class="lineno">  257</span>    }</div>
-<div class="line"><span class="lineno">  258</span> </div>
-<div class="line"><span class="lineno">  259</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
-<div class="line"><span class="lineno">  260</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* proximo = atual-&gt;prox; proximo; proximo = proximo-&gt;prox) {</div>
-<div class="line"><span class="lineno">  261</span>            <span class="keywordflow">if</span> (atual-&gt;antena.frequencia == proximo-&gt;antena.frequencia) {</div>
-<div class="line"><span class="lineno">  262</span>                <a class="code hl_function" href="#ad03a2eb43b24746fb3f6ce8dcf576554">adicionarAdjacente</a>(&amp;grafo, atual-&gt;codigo, proximo-&gt;codigo);</div>
-<div class="line"><span class="lineno">  263</span>                <a class="code hl_function" href="#ad03a2eb43b24746fb3f6ce8dcf576554">adicionarAdjacente</a>(&amp;grafo, proximo-&gt;codigo, atual-&gt;codigo);</div>
-<div class="line"><span class="lineno">  264</span>            }</div>
-<div class="line"><span class="lineno">  265</span>        }</div>
-<div class="line"><span class="lineno">  266</span>    }</div>
-<div class="line"><span class="lineno">  267</span> </div>
-<div class="line"><span class="lineno">  268</span>    fclose(file);</div>
-<div class="line"><span class="lineno">  269</span>    <span class="keywordflow">return</span> grafo;</div>
-<div class="line"><span class="lineno">  270</span>}</div>
-<div class="ttc" id="agrafo_8c_html_a18f15146c4b8e69b5462bd86933a4a6e"><div class="ttname"><a href="#a18f15146c4b8e69b5462bd86933a4a6e">criarGrafo</a></div><div class="ttdeci">Grafo criarGrafo()</div><div class="ttdoc">Cria um novo grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00065">grafo.c:65</a></div></div>
-<div class="ttc" id="agrafo_8c_html_acb7fa33683de9620ce6ba8ea909bffea"><div class="ttname"><a href="#acb7fa33683de9620ce6ba8ea909bffea">adicionarVertice</a></div><div class="ttdeci">int adicionarVertice(Grafo *grafo, int x, int y, char freq)</div><div class="ttdoc">Adiciona um vértice ao grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00136">grafo.c:136</a></div></div>
-<div class="ttc" id="agrafo_8c_html_ad03a2eb43b24746fb3f6ce8dcf576554"><div class="ttname"><a href="#ad03a2eb43b24746fb3f6ce8dcf576554">adicionarAdjacente</a></div><div class="ttdeci">int adicionarAdjacente(Grafo *grafo, int vertice, int adjacente)</div><div class="ttdoc">Adiciona um vértice adjacente a um vértice existente no grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00161">grafo.c:161</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00222">222</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  222</span>                                         {</div>
+<div class="line"><span class="lineno">  223</span>    FILE* file = fopen(nomeFicheiro, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">if</span> (!file) {</div>
+<div class="line"><span class="lineno">  225</span>        printf(<span class="stringliteral">&quot;Erro ao abrir o ficheiro!\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  226</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#a18f15146c4b8e69b5462bd86933a4a6e">criarGrafo</a>();</div>
+<div class="line"><span class="lineno">  227</span>    }</div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>    <a class="code hl_struct" href="../../d7/d62/struct_grafo.html">Grafo</a> grafo = <a class="code hl_function" href="#a18f15146c4b8e69b5462bd86933a4a6e">criarGrafo</a>();</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordtype">char</span> linha[100];</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; fgets(linha, <span class="keyword">sizeof</span>(linha), file); y++) {</div>
+<div class="line"><span class="lineno">  233</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; linha[x] != <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; linha[x] != <span class="charliteral">&#39;\n&#39;</span>; x++) {</div>
+<div class="line"><span class="lineno">  234</span>            <span class="keywordflow">if</span> (linha[x] != <span class="charliteral">&#39;.&#39;</span> &amp;&amp; linha[x] != <span class="charliteral">&#39;#&#39;</span>) </div>
+<div class="line"><span class="lineno">  235</span>                <a class="code hl_function" href="#acb7fa33683de9620ce6ba8ea909bffea">adicionarVertice</a>(&amp;grafo, x, y, linha[x]);</div>
+<div class="line"><span class="lineno">  236</span>        }</div>
+<div class="line"><span class="lineno">  237</span>    }</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo.vertices; atual; atual = atual-&gt;prox) {</div>
+<div class="line"><span class="lineno">  240</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* proximo = atual-&gt;prox; proximo; proximo = proximo-&gt;prox) {</div>
+<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">if</span> (atual-&gt;antena.frequencia == proximo-&gt;antena.frequencia) {</div>
+<div class="line"><span class="lineno">  242</span>                <a class="code hl_function" href="#ad03a2eb43b24746fb3f6ce8dcf576554">adicionarAdjacente</a>(&amp;grafo, atual-&gt;codigo, proximo-&gt;codigo);</div>
+<div class="line"><span class="lineno">  243</span>                <a class="code hl_function" href="#ad03a2eb43b24746fb3f6ce8dcf576554">adicionarAdjacente</a>(&amp;grafo, proximo-&gt;codigo, atual-&gt;codigo);</div>
+<div class="line"><span class="lineno">  244</span>            }</div>
+<div class="line"><span class="lineno">  245</span>        }</div>
+<div class="line"><span class="lineno">  246</span>    }</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>    fclose(file);</div>
+<div class="line"><span class="lineno">  249</span>    <span class="keywordflow">return</span> grafo;</div>
+<div class="line"><span class="lineno">  250</span>}</div>
+<div class="ttc" id="agrafo_8c_html_a18f15146c4b8e69b5462bd86933a4a6e"><div class="ttname"><a href="#a18f15146c4b8e69b5462bd86933a4a6e">criarGrafo</a></div><div class="ttdeci">Grafo criarGrafo()</div><div class="ttdoc">Cria um novo grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00047">grafo.c:47</a></div></div>
+<div class="ttc" id="agrafo_8c_html_acb7fa33683de9620ce6ba8ea909bffea"><div class="ttname"><a href="#acb7fa33683de9620ce6ba8ea909bffea">adicionarVertice</a></div><div class="ttdeci">int adicionarVertice(Grafo *grafo, int x, int y, char freq)</div><div class="ttdoc">Adiciona um vértice ao grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00116">grafo.c:116</a></div></div>
+<div class="ttc" id="agrafo_8c_html_ad03a2eb43b24746fb3f6ce8dcf576554"><div class="ttname"><a href="#ad03a2eb43b24746fb3f6ce8dcf576554">adicionarAdjacente</a></div><div class="ttdeci">int adicionarAdjacente(Grafo *grafo, int vertice, int adjacente)</div><div class="ttdoc">Adiciona um vértice adjacente a um vértice existente no grafo.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00141">grafo.c:141</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -924,20 +880,20 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 1 se a operação foi realizada com sucesso. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00219">219</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  219</span>                                {</div>
-<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo-&gt;vertices; atual; atual = atual-&gt;prox) {</div>
-<div class="line"><span class="lineno">  221</span>        <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* temp = atual;</div>
-<div class="line"><span class="lineno">  222</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adjAtual = atual-&gt;adjacentes; adjAtual; adjAtual = adjAtual-&gt;prox) {</div>
-<div class="line"><span class="lineno">  223</span>            <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adjTemp = adjAtual;</div>
-<div class="line"><span class="lineno">  224</span>            free(adjTemp);</div>
-<div class="line"><span class="lineno">  225</span>        }</div>
-<div class="line"><span class="lineno">  226</span>        free(temp);</div>
-<div class="line"><span class="lineno">  227</span>    }</div>
-<div class="line"><span class="lineno">  228</span>    grafo-&gt;vertices = NULL;</div>
-<div class="line"><span class="lineno">  229</span>    grafo-&gt;numVertices = 0;</div>
-<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  231</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00199">199</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>                                {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* atual = grafo-&gt;vertices; atual; atual = atual-&gt;prox) {</div>
+<div class="line"><span class="lineno">  201</span>        <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* temp = atual;</div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adjAtual = atual-&gt;adjacentes; adjAtual; adjAtual = adjAtual-&gt;prox) {</div>
+<div class="line"><span class="lineno">  203</span>            <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adjTemp = adjAtual;</div>
+<div class="line"><span class="lineno">  204</span>            free(adjTemp);</div>
+<div class="line"><span class="lineno">  205</span>        }</div>
+<div class="line"><span class="lineno">  206</span>        free(temp);</div>
+<div class="line"><span class="lineno">  207</span>    }</div>
+<div class="line"><span class="lineno">  208</span>    grafo-&gt;vertices = NULL;</div>
+<div class="line"><span class="lineno">  209</span>    grafo-&gt;numVertices = 0;</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  211</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -977,37 +933,37 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 1 se os caminhos foram listados com sucesso, 0 caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00466">466</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  466</span>                                                             {</div>
-<div class="line"><span class="lineno">  467</span>    <span class="keywordflow">if</span> (grafo.numVertices &lt; 1) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  468</span>    <span class="keywordflow">if</span> (!grafo.vertices) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  469</span>    <span class="keywordflow">if</span> (!grafo.vertices-&gt;prox) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  470</span>    </div>
-<div class="line"><span class="lineno">  471</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertInicial = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, inicial);</div>
-<div class="line"><span class="lineno">  472</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertFinal = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, <span class="keyword">final</span>);</div>
-<div class="line"><span class="lineno">  473</span>    <span class="keywordflow">if</span> (!vertInicial || !vertFinal) {</div>
-<div class="line"><span class="lineno">  474</span>        printf(<span class="stringliteral">&quot;Um dos vertices nao existe no grafo.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  475</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  476</span>    }</div>
-<div class="line"><span class="lineno">  477</span>    <span class="keywordflow">if</span> (vertInicial-&gt;antena.frequencia != vertFinal-&gt;antena.frequencia) {</div>
-<div class="line"><span class="lineno">  478</span>        printf(<span class="stringliteral">&quot;As antenas nao tem a mesma frequencia.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  479</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  480</span>    }</div>
-<div class="line"><span class="lineno">  481</span>    </div>
-<div class="line"><span class="lineno">  482</span>    <span class="keywordflow">if</span> (inicial == <span class="keyword">final</span>) {</div>
-<div class="line"><span class="lineno">  483</span>        printf(<span class="stringliteral">&quot;Caminho: %d\n&quot;</span>, inicial);</div>
-<div class="line"><span class="lineno">  484</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  485</span>    }</div>
-<div class="line"><span class="lineno">  486</span> </div>
-<div class="line"><span class="lineno">  487</span>    <span class="keywordtype">int</span>* caminho = malloc(grafo.numVertices * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><span class="lineno">  488</span>    <span class="keywordflow">if</span> (!caminho) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  489</span> </div>
-<div class="line"><span class="lineno">  490</span>    <a class="code hl_function" href="#a501113199c993991ba9a3ea7dfbdf62d">listarTodosCaminhosAux</a>(grafo, inicial, <span class="keyword">final</span>, caminho, 0);</div>
-<div class="line"><span class="lineno">  491</span> </div>
-<div class="line"><span class="lineno">  492</span>    free(caminho);</div>
-<div class="line"><span class="lineno">  493</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  494</span>}</div>
-<div class="ttc" id="agrafo_8c_html_a501113199c993991ba9a3ea7dfbdf62d"><div class="ttname"><a href="#a501113199c993991ba9a3ea7dfbdf62d">listarTodosCaminhosAux</a></div><div class="ttdeci">static int listarTodosCaminhosAux(Grafo grafo, int atual, int final, int *caminho, int profundidade)</div><div class="ttdoc">Função auxiliar recursiva para listar todos os caminhos entre dois vértices.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00427">grafo.c:427</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00446">446</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  446</span>                                                             {</div>
+<div class="line"><span class="lineno">  447</span>    <span class="keywordflow">if</span> (grafo.numVertices &lt; 1) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  448</span>    <span class="keywordflow">if</span> (!grafo.vertices) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  449</span>    <span class="keywordflow">if</span> (!grafo.vertices-&gt;prox) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  450</span>    </div>
+<div class="line"><span class="lineno">  451</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertInicial = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, inicial);</div>
+<div class="line"><span class="lineno">  452</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertFinal = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, <span class="keyword">final</span>);</div>
+<div class="line"><span class="lineno">  453</span>    <span class="keywordflow">if</span> (!vertInicial || !vertFinal) {</div>
+<div class="line"><span class="lineno">  454</span>        printf(<span class="stringliteral">&quot;Um dos vertices nao existe no grafo.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  455</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  456</span>    }</div>
+<div class="line"><span class="lineno">  457</span>    <span class="keywordflow">if</span> (vertInicial-&gt;antena.frequencia != vertFinal-&gt;antena.frequencia) {</div>
+<div class="line"><span class="lineno">  458</span>        printf(<span class="stringliteral">&quot;As antenas nao tem a mesma frequencia.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  459</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  460</span>    }</div>
+<div class="line"><span class="lineno">  461</span>    </div>
+<div class="line"><span class="lineno">  462</span>    <span class="keywordflow">if</span> (inicial == <span class="keyword">final</span>) {</div>
+<div class="line"><span class="lineno">  463</span>        printf(<span class="stringliteral">&quot;Caminho: %d\n&quot;</span>, inicial);</div>
+<div class="line"><span class="lineno">  464</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  465</span>    }</div>
+<div class="line"><span class="lineno">  466</span> </div>
+<div class="line"><span class="lineno">  467</span>    <span class="keywordtype">int</span>* caminho = malloc(grafo.numVertices * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  468</span>    <span class="keywordflow">if</span> (!caminho) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  469</span> </div>
+<div class="line"><span class="lineno">  470</span>    <a class="code hl_function" href="#a501113199c993991ba9a3ea7dfbdf62d">listarTodosCaminhosAux</a>(grafo, inicial, <span class="keyword">final</span>, caminho, 0);</div>
+<div class="line"><span class="lineno">  471</span> </div>
+<div class="line"><span class="lineno">  472</span>    free(caminho);</div>
+<div class="line"><span class="lineno">  473</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  474</span>}</div>
+<div class="ttc" id="agrafo_8c_html_a501113199c993991ba9a3ea7dfbdf62d"><div class="ttname"><a href="#a501113199c993991ba9a3ea7dfbdf62d">listarTodosCaminhosAux</a></div><div class="ttdeci">static int listarTodosCaminhosAux(Grafo grafo, int atual, int final, int *caminho, int profundidade)</div><div class="ttdoc">Função auxiliar recursiva para listar todos os caminhos entre dois vértices.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d7d/grafo_8c_source.html#l00407">grafo.c:407</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1067,35 +1023,35 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 1 se um caminho foi encontrado, 0 caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00427">427</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  427</span>                                                                                                     {</div>
-<div class="line"><span class="lineno">  428</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vert = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, atual);</div>
-<div class="line"><span class="lineno">  429</span>    <span class="keywordflow">if</span> (!vert) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  430</span> </div>
-<div class="line"><span class="lineno">  431</span>    vert-&gt;visitado = 1;</div>
-<div class="line"><span class="lineno">  432</span>    caminho[profundidade] = atual;</div>
-<div class="line"><span class="lineno">  433</span>    profundidade++;</div>
-<div class="line"><span class="lineno">  434</span> </div>
-<div class="line"><span class="lineno">  435</span>    <span class="keywordflow">if</span> (atual == <span class="keyword">final</span>) {</div>
-<div class="line"><span class="lineno">  436</span>        printf(<span class="stringliteral">&quot;Caminho: &quot;</span>);</div>
-<div class="line"><span class="lineno">  437</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; profundidade; i++) {</div>
-<div class="line"><span class="lineno">  438</span>            printf(<span class="stringliteral">&quot;%d&quot;</span>, caminho[i]);</div>
-<div class="line"><span class="lineno">  439</span>            <span class="keywordflow">if</span> (i &lt; profundidade - 1) printf(<span class="stringliteral">&quot; -&gt; &quot;</span>);</div>
-<div class="line"><span class="lineno">  440</span>        }</div>
-<div class="line"><span class="lineno">  441</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  442</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  443</span>        <span class="keywordflow">if</span> (!vert-&gt;adjacentes) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  444</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adj = vert-&gt;adjacentes; adj; adj = adj-&gt;prox) {</div>
-<div class="line"><span class="lineno">  445</span>            <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertAdj = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, adj-&gt;codigo);</div>
-<div class="line"><span class="lineno">  446</span>            <span class="keywordflow">if</span> (vertAdj &amp;&amp; !vertAdj-&gt;visitado) {</div>
-<div class="line"><span class="lineno">  447</span>                <a class="code hl_function" href="#a501113199c993991ba9a3ea7dfbdf62d">listarTodosCaminhosAux</a>(grafo, adj-&gt;codigo, <span class="keyword">final</span>, caminho, profundidade);</div>
-<div class="line"><span class="lineno">  448</span>            }</div>
-<div class="line"><span class="lineno">  449</span>        }</div>
-<div class="line"><span class="lineno">  450</span>    }</div>
-<div class="line"><span class="lineno">  451</span> </div>
-<div class="line"><span class="lineno">  452</span>    vert-&gt;visitado = 0; <span class="comment">// Backtrack</span></div>
-<div class="line"><span class="lineno">  453</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  454</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d7d/grafo_8c_source.html#l00407">407</a> of file <a class="el" href="../../db/d7d/grafo_8c_source.html">grafo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  407</span>                                                                                                     {</div>
+<div class="line"><span class="lineno">  408</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vert = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, atual);</div>
+<div class="line"><span class="lineno">  409</span>    <span class="keywordflow">if</span> (!vert) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  410</span> </div>
+<div class="line"><span class="lineno">  411</span>    vert-&gt;visitado = 1;</div>
+<div class="line"><span class="lineno">  412</span>    caminho[profundidade] = atual;</div>
+<div class="line"><span class="lineno">  413</span>    profundidade++;</div>
+<div class="line"><span class="lineno">  414</span> </div>
+<div class="line"><span class="lineno">  415</span>    <span class="keywordflow">if</span> (atual == <span class="keyword">final</span>) {</div>
+<div class="line"><span class="lineno">  416</span>        printf(<span class="stringliteral">&quot;Caminho: &quot;</span>);</div>
+<div class="line"><span class="lineno">  417</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; profundidade; i++) {</div>
+<div class="line"><span class="lineno">  418</span>            printf(<span class="stringliteral">&quot;%d&quot;</span>, caminho[i]);</div>
+<div class="line"><span class="lineno">  419</span>            <span class="keywordflow">if</span> (i &lt; profundidade - 1) printf(<span class="stringliteral">&quot; -&gt; &quot;</span>);</div>
+<div class="line"><span class="lineno">  420</span>        }</div>
+<div class="line"><span class="lineno">  421</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  422</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  423</span>        <span class="keywordflow">if</span> (!vert-&gt;adjacentes) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  424</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adj = vert-&gt;adjacentes; adj; adj = adj-&gt;prox) {</div>
+<div class="line"><span class="lineno">  425</span>            <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertAdj = <a class="code hl_function" href="#abd74136facdb68455c04092221b9e979">encontrarVerticePorCod</a>(grafo, adj-&gt;codigo);</div>
+<div class="line"><span class="lineno">  426</span>            <span class="keywordflow">if</span> (vertAdj &amp;&amp; !vertAdj-&gt;visitado) {</div>
+<div class="line"><span class="lineno">  427</span>                <a class="code hl_function" href="#a501113199c993991ba9a3ea7dfbdf62d">listarTodosCaminhosAux</a>(grafo, adj-&gt;codigo, <span class="keyword">final</span>, caminho, profundidade);</div>
+<div class="line"><span class="lineno">  428</span>            }</div>
+<div class="line"><span class="lineno">  429</span>        }</div>
+<div class="line"><span class="lineno">  430</span>    }</div>
+<div class="line"><span class="lineno">  431</span> </div>
+<div class="line"><span class="lineno">  432</span>    vert-&gt;visitado = 0; <span class="comment">// Backtrack</span></div>
+<div class="line"><span class="lineno">  433</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  434</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -37,24 +37,6 @@ Antena criarAntena (char freq, int x, int y) {
     return nova;
 }
 
-
-/**
- * @brief Cria um novo efeito nefasto.
- * 
- * Esta função cria um novo efeito nefasto e o inicializa com as coordenadas especificadas.
- * 
- * @param x Coordenada x do efeito nefasto.
- * @param y Coordenada y do efeito nefasto.
- * @return Nefasto Retorna o efeito nefasto criado.
- */
-Nefasto criarNefasto (int x, int y) {
-    Nefasto novo;
-    novo.x = x;
-    novo.y = y;
-    return novo;
-}
-
-
 /**
  * @brief Cria um novo grafo.
  * 
@@ -68,7 +50,6 @@ Grafo criarGrafo() {
     novo.numVertices = 0;
     return novo;
 }
-
 
 /**
  * @brief Cria um novo vértice.
@@ -95,7 +76,6 @@ Vertice* criarVertice(int codigo, int x, int y, char freq) {
     novo->adjacentes = NULL;
     return novo;
 }
-
 
 /**
  * @brief Cria uma nova adjacência.

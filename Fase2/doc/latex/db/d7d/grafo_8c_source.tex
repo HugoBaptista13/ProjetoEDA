@@ -21,314 +21,303 @@
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{return}\ nova;}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00038}00038\ \}}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00050}\mbox{\hyperlink{grafo_8c_a68122fa78c544a7fa14cf79907db815c}{00050}}\ \mbox{\hyperlink{struct_nefasto}{Nefasto}}\ \mbox{\hyperlink{grafo_8c_a68122fa78c544a7fa14cf79907db815c}{criarNefasto}}\ (\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{struct_nefasto}{Nefasto}}\ novo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00052}00052\ \ \ \ \ novo.x\ =\ x;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00053}00053\ \ \ \ \ novo.y\ =\ y;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00055}00055\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00065}\mbox{\hyperlink{grafo_8c_a18f15146c4b8e69b5462bd86933a4a6e}{00065}}\ \mbox{\hyperlink{struct_grafo}{Grafo}}\ \mbox{\hyperlink{grafo_8c_a18f15146c4b8e69b5462bd86933a4a6e}{criarGrafo}}()\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{struct_grafo}{Grafo}}\ novo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00067}00067\ \ \ \ \ novo.vertices\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00068}00068\ \ \ \ \ novo.numVertices\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00070}00070\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00085}\mbox{\hyperlink{grafo_8c_a3ae198be169a402a0dfe97ce76574771}{00085}}\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{grafo_8c_a3ae198be169a402a0dfe97ce76574771}{criarVertice}}(\textcolor{keywordtype}{int}\ codigo,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ freq)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ novo\ =\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_vertice}{Vertice}}));}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (!novo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00088}00088\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ alocar\ memoria!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00090}00090\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00091}00091\ \ \ \ \ novo-\/>codigo\ =\ codigo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00092}00092\ \ \ \ \ novo-\/>antena\ =\ \mbox{\hyperlink{grafo_8c_aeff493120db5febaabe3f72dfa55a0c5}{criarAntena}}\ (freq,\ x,\ y);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00093}00093\ \ \ \ \ novo-\/>visitado\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00094}00094\ \ \ \ \ novo-\/>prox\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00095}00095\ \ \ \ \ novo-\/>adjacentes\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00097}00097\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00109}\mbox{\hyperlink{grafo_8c_ad70ad4a6e6f10d67103bb24c810229e2}{00109}}\ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ \mbox{\hyperlink{grafo_8c_ad70ad4a6e6f10d67103bb24c810229e2}{criarAdjacente}}(\textcolor{keywordtype}{int}\ codigo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ novo\ =\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_adjacente}{Adjacente}}));}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (!novo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00112}00112\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ alocar\ memoria!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00114}00114\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00115}00115\ \ \ \ \ novo-\/>codigo\ =\ codigo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00116}00116\ \ \ \ \ novo-\/>prox\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00118}00118\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00119}00119\ \textcolor{preprocessor}{\#pragma\ endregion}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00120}00120\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00121}00121\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00122}00122\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00123}00123\ \textcolor{preprocessor}{\#pragma\ region\ Funções\ de\ Manipulação\ do\ Grafo}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00124}00124\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00136}\mbox{\hyperlink{grafo_8c_acb7fa33683de9620ce6ba8ea909bffea}{00136}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_acb7fa33683de9620ce6ba8ea909bffea}{adicionarVertice}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ freq)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00137}00137\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ novo\ =\ \mbox{\hyperlink{grafo_8c_a3ae198be169a402a0dfe97ce76574771}{criarVertice}}(\mbox{\hyperlink{grafo_8c_a0756e0cd54a976f676de07c5ed5ee5bd}{nextCod}}++,\ x,\ y,\ freq);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{if}\ (!novo)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00139}00139\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo-\/>vertices)\ \{grafo-\/>vertices\ =\ novo;\}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00142}00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ tail\ =\ grafo-\/>vertices;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tail-\/>prox)\ \{tail\ =\ tail-\/>prox;\}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00144}00144\ \ \ \ \ \ \ \ \ tail-\/>prox\ =\ novo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00145}00145\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00146}00146\ \ \ \ \ grafo-\/>numVertices++;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00148}00148\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00047}\mbox{\hyperlink{grafo_8c_a18f15146c4b8e69b5462bd86933a4a6e}{00047}}\ \mbox{\hyperlink{struct_grafo}{Grafo}}\ \mbox{\hyperlink{grafo_8c_a18f15146c4b8e69b5462bd86933a4a6e}{criarGrafo}}()\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{struct_grafo}{Grafo}}\ novo;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00049}00049\ \ \ \ \ novo.vertices\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00050}00050\ \ \ \ \ novo.numVertices\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00066}\mbox{\hyperlink{grafo_8c_a3ae198be169a402a0dfe97ce76574771}{00066}}\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{grafo_8c_a3ae198be169a402a0dfe97ce76574771}{criarVertice}}(\textcolor{keywordtype}{int}\ codigo,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ freq)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ novo\ =\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_vertice}{Vertice}}));}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (!novo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ alocar\ memoria!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00072}00072\ \ \ \ \ novo-\/>codigo\ =\ codigo;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00073}00073\ \ \ \ \ novo-\/>antena\ =\ \mbox{\hyperlink{grafo_8c_aeff493120db5febaabe3f72dfa55a0c5}{criarAntena}}\ (freq,\ x,\ y);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00074}00074\ \ \ \ \ novo-\/>visitado\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00075}00075\ \ \ \ \ novo-\/>prox\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00076}00076\ \ \ \ \ novo-\/>adjacentes\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00078}00078\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00089}\mbox{\hyperlink{grafo_8c_ad70ad4a6e6f10d67103bb24c810229e2}{00089}}\ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ \mbox{\hyperlink{grafo_8c_ad70ad4a6e6f10d67103bb24c810229e2}{criarAdjacente}}(\textcolor{keywordtype}{int}\ codigo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ novo\ =\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_adjacente}{Adjacente}}));}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (!novo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00092}00092\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ alocar\ memoria!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00095}00095\ \ \ \ \ novo-\/>codigo\ =\ codigo;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00096}00096\ \ \ \ \ novo-\/>prox\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{return}\ novo;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00099}00099\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00103}00103\ \textcolor{preprocessor}{\#pragma\ region\ Funções\ de\ Manipulação\ do\ Grafo}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00116}\mbox{\hyperlink{grafo_8c_acb7fa33683de9620ce6ba8ea909bffea}{00116}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_acb7fa33683de9620ce6ba8ea909bffea}{adicionarVertice}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{char}\ freq)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ novo\ =\ \mbox{\hyperlink{grafo_8c_a3ae198be169a402a0dfe97ce76574771}{criarVertice}}(\mbox{\hyperlink{grafo_8c_a0756e0cd54a976f676de07c5ed5ee5bd}{nextCod}}++,\ x,\ y,\ freq);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{if}\ (!novo)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo-\/>vertices)\ \{grafo-\/>vertices\ =\ novo;\}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ tail\ =\ grafo-\/>vertices;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tail-\/>prox)\ \{tail\ =\ tail-\/>prox;\}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00124}00124\ \ \ \ \ \ \ \ \ tail-\/>prox\ =\ novo;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00126}00126\ \ \ \ \ grafo-\/>numVertices++;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00128}00128\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00141}\mbox{\hyperlink{grafo_8c_ad03a2eb43b24746fb3f6ce8dcf576554}{00141}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_ad03a2eb43b24746fb3f6ce8dcf576554}{adicionarAdjacente}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ vertice,\ \textcolor{keywordtype}{int}\ adjacente)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo-\/>numVertices\ <\ 1)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo-\/>vertices)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo-\/>vertices-\/>prox)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo-\/>vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>codigo\ ==\ vertice)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ temp\ =\ atual-\/>adjacentes;\ temp;\ temp\ =\ temp-\/>prox)\ \{\ \textcolor{keywordflow}{if}\ (temp-\/>codigo\ ==\ adjacente)\ \textcolor{keywordflow}{return}\ 0;\}}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00149}00149\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00150}00150\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00161}\mbox{\hyperlink{grafo_8c_ad03a2eb43b24746fb3f6ce8dcf576554}{00161}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_ad03a2eb43b24746fb3f6ce8dcf576554}{adicionarAdjacente}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo,\ \textcolor{keywordtype}{int}\ vertice,\ \textcolor{keywordtype}{int}\ adjacente)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo-\/>numVertices\ <\ 1)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo-\/>vertices)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo-\/>vertices-\/>prox)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00165}00165\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00166}00166\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo-\/>vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>codigo\ ==\ vertice)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ temp\ =\ atual-\/>adjacentes;\ temp;\ temp\ =\ temp-\/>prox)\ \{\ \textcolor{keywordflow}{if}\ (temp-\/>codigo\ ==\ adjacente)\ \textcolor{keywordflow}{return}\ 0;\}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00169}00169\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ novoAdjacente\ =\ \mbox{\hyperlink{grafo_8c_ad70ad4a6e6f10d67103bb24c810229e2}{criarAdjacente}}(adjacente);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!novoAdjacente)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!atual-\/>adjacentes)\ \{atual-\/>adjacentes\ =\ novoAdjacente;\}\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ tail\ =\ atual-\/>adjacentes;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tail-\/>prox)\ \{tail\ =\ tail-\/>prox;\}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>prox\ =\ novoAdjacente;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00180}00180\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00181}00181\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00182}00182\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00183}00183\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00184}00184\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00192}\mbox{\hyperlink{grafo_8c_a5f4edf67784144a7ef4055943819ad9b}{00192}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{grafo_8c_a5f4edf67784144a7ef4055943819ad9b}{escreverGrafo}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo.numVertices\ <\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00194}00194\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Grafo\ vazio!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00196}00196\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00197}00197\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00198}00198\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Vertice\ \%d:\ (X:\ \%d,\ Y:\ \%d)\ -\/\ FREQ:\ \%c\(\backslash\)n"{}},\ atual-\/>codigo,\ atual-\/>antena.x,\ atual-\/>antena.y,\ atual-\/>antena.frequencia);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>adjacentes\ ==\ NULL)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/>\ \ Sem\ adjacentes\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ atual-\/>adjacentes;\ adj;\ adj\ =\ adj-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/>\ \ Adjacente:\ \%d\(\backslash\)n"{}},\ adj-\/>codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ novoAdjacente\ =\ \mbox{\hyperlink{grafo_8c_ad70ad4a6e6f10d67103bb24c810229e2}{criarAdjacente}}(adjacente);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!novoAdjacente)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!atual-\/>adjacentes)\ \{atual-\/>adjacentes\ =\ novoAdjacente;\}\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ tail\ =\ atual-\/>adjacentes;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tail-\/>prox)\ \{tail\ =\ tail-\/>prox;\}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>prox\ =\ novoAdjacente;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00160}00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00161}00161\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00163}00163\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00172}\mbox{\hyperlink{grafo_8c_a5f4edf67784144a7ef4055943819ad9b}{00172}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{grafo_8c_a5f4edf67784144a7ef4055943819ad9b}{escreverGrafo}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo.numVertices\ <\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00174}00174\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Grafo\ vazio!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00176}00176\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00177}00177\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00178}00178\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Vertice\ \%d:\ (X:\ \%d,\ Y:\ \%d)\ -\/\ FREQ:\ \%c\(\backslash\)n"{}},\ atual-\/>codigo,\ atual-\/>antena.x,\ atual-\/>antena.y,\ atual-\/>antena.frequencia);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>adjacentes\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/>\ \ Sem\ adjacentes\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00182}00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ atual-\/>adjacentes;\ adj;\ adj\ =\ adj-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/>\ \ Adjacente:\ \%d\(\backslash\)n"{}},\ adj-\/>codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00186}00186\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00188}00188\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00199}\mbox{\hyperlink{grafo_8c_ad6856e8e3f355721da30812389385752}{00199}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_ad6856e8e3f355721da30812389385752}{libertarGrafo}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo-\/>vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00201}00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ temp\ =\ atual;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adjAtual\ =\ atual-\/>adjacentes;\ adjAtual;\ adjAtual\ =\ adjAtual-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adjTemp\ =\ adjAtual;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ free(adjTemp);}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00205}00205\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00206}00206\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00206}00206\ \ \ \ \ \ \ \ \ free(temp);}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00207}00207\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00208}00208\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00209}00209\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00210}00210\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00219}\mbox{\hyperlink{grafo_8c_ad6856e8e3f355721da30812389385752}{00219}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_ad6856e8e3f355721da30812389385752}{libertarGrafo}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ grafo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00220}00220\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo-\/>vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00221}00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ temp\ =\ atual;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adjAtual\ =\ atual-\/>adjacentes;\ adjAtual;\ adjAtual\ =\ adjAtual-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adjTemp\ =\ adjAtual;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ free(adjTemp);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00225}00225\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00226}00226\ \ \ \ \ \ \ \ \ free(temp);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00208}00208\ \ \ \ \ grafo-\/>vertices\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00209}00209\ \ \ \ \ grafo-\/>numVertices\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00222}\mbox{\hyperlink{grafo_8c_a12065edee47794cd84c6f3e3397f447c}{00222}}\ \mbox{\hyperlink{struct_grafo}{Grafo}}\ \mbox{\hyperlink{grafo_8c_a12065edee47794cd84c6f3e3397f447c}{lerGrafo}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00223}00223\ \ \ \ \ FILE*\ file\ =\ fopen(nomeFicheiro,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00224}00224\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00225}00225\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ o\ ficheiro!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{grafo_8c_a18f15146c4b8e69b5462bd86933a4a6e}{criarGrafo}}();}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00227}00227\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00228}00228\ \ \ \ \ grafo-\/>vertices\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00229}00229\ \ \ \ \ grafo-\/>numVertices\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00230}00230\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00231}00231\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00232}00232\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00233}00233\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00242}\mbox{\hyperlink{grafo_8c_a12065edee47794cd84c6f3e3397f447c}{00242}}\ \mbox{\hyperlink{struct_grafo}{Grafo}}\ \mbox{\hyperlink{grafo_8c_a12065edee47794cd84c6f3e3397f447c}{lerGrafo}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomeFicheiro)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00243}00243\ \ \ \ \ FILE*\ file\ =\ fopen(nomeFicheiro,\ \textcolor{stringliteral}{"{}r"{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00244}00244\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00245}00245\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ o\ ficheiro!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{grafo_8c_a18f15146c4b8e69b5462bd86933a4a6e}{criarGrafo}}();}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00247}00247\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00248}00248\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00249}00249\ \ \ \ \ \mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo\ =\ \mbox{\hyperlink{grafo_8c_a18f15146c4b8e69b5462bd86933a4a6e}{criarGrafo}}();}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00250}00250\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00251}00251\ \ \ \ \ \textcolor{keywordtype}{char}\ linha[100];}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00252}00252\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ fgets(linha,\ \textcolor{keyword}{sizeof}(linha),\ file);\ y++)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ linha[x]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ linha[x]\ !=\ \textcolor{charliteral}{'\(\backslash\)n'};\ x++)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (linha[x]\ !=\ \textcolor{charliteral}{'.'}\ \&\&\ linha[x]\ !=\ \textcolor{charliteral}{'\#'})\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_acb7fa33683de9620ce6ba8ea909bffea}{adicionarVertice}}(\&grafo,\ x,\ y,\ linha[x]);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00256}00256\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00257}00257\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00229}00229\ \ \ \ \ \mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo\ =\ \mbox{\hyperlink{grafo_8c_a18f15146c4b8e69b5462bd86933a4a6e}{criarGrafo}}();}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00231}00231\ \ \ \ \ \textcolor{keywordtype}{char}\ linha[100];}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ fgets(linha,\ \textcolor{keyword}{sizeof}(linha),\ file);\ y++)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ linha[x]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ linha[x]\ !=\ \textcolor{charliteral}{'\(\backslash\)n'};\ x++)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (linha[x]\ !=\ \textcolor{charliteral}{'.'}\ \&\&\ linha[x]\ !=\ \textcolor{charliteral}{'\#'})\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_acb7fa33683de9620ce6ba8ea909bffea}{adicionarVertice}}(\&grafo,\ x,\ y,\ linha[x]);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00236}00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00237}00237\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ proximo\ =\ atual-\/>prox;\ proximo;\ proximo\ =\ proximo-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>antena.frequencia\ ==\ proximo-\/>antena.frequencia)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_ad03a2eb43b24746fb3f6ce8dcf576554}{adicionarAdjacente}}(\&grafo,\ atual-\/>codigo,\ proximo-\/>codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_ad03a2eb43b24746fb3f6ce8dcf576554}{adicionarAdjacente}}(\&grafo,\ proximo-\/>codigo,\ atual-\/>codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00245}00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00246}00246\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00248}00248\ \ \ \ \ fclose(file);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{return}\ grafo;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00250}00250\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00252}00252\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00256}00256\ \textcolor{preprocessor}{\#pragma\ region\ Buscas}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00257}00257\ }
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00258}00258\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00259}00259\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ proximo\ =\ atual-\/>prox;\ proximo;\ proximo\ =\ proximo-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>antena.frequencia\ ==\ proximo-\/>antena.frequencia)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_ad03a2eb43b24746fb3f6ce8dcf576554}{adicionarAdjacente}}(\&grafo,\ atual-\/>codigo,\ proximo-\/>codigo);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_ad03a2eb43b24746fb3f6ce8dcf576554}{adicionarAdjacente}}(\&grafo,\ proximo-\/>codigo,\ atual-\/>codigo);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00265}00265\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00266}00266\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00267}00267\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00268}00268\ \ \ \ \ fclose(file);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{return}\ grafo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00270}00270\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00271}00271\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00272}00272\ \textcolor{preprocessor}{\#pragma\ endregion}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00273}00273\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00274}00274\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00275}00275\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00276}00276\ \textcolor{preprocessor}{\#pragma\ region\ Buscas}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00268}\mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{00268}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ codigo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>codigo\ ==\ codigo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ atual;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00272}00272\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00273}00273\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00274}00274\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00275}00275\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00276}00276\ }
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00277}00277\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00278}00278\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00288}\mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{00288}}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ codigo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00290}00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>codigo\ ==\ codigo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ atual;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00287}\mbox{\hyperlink{grafo_8c_ada1c562921870b63d244f7d59db172de}{00287}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_ada1c562921870b63d244f7d59db172de}{desvisitarVertice}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ codigo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00288}00288\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00289}00289\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>codigo\ ==\ codigo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>visitado\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00292}00292\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00293}00293\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00294}00294\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00294}00294\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00295}00295\ \}}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00296}00296\ }
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00297}00297\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00307}\mbox{\hyperlink{grafo_8c_ada1c562921870b63d244f7d59db172de}{00307}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_ada1c562921870b63d244f7d59db172de}{desvisitarVertice}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ codigo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00308}00308\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>codigo\ ==\ codigo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>visitado\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00312}00312\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00313}00313\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00314}00314\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00315}00315\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00316}00316\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00317}00317\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00326}\mbox{\hyperlink{grafo_8c_aa66cfd0a83a884524ef3636d33edce7f}{00326}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_aa66cfd0a83a884524ef3636d33edce7f}{desvisitarTodos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00327}00327\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00328}00328\ \ \ \ \ \ \ \ \ atual-\/>visitado\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00329}00329\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00330}00330\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00331}00331\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00332}00332\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00333}00333\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00343}\mbox{\hyperlink{grafo_8c_ab8b56df9ee2d4b75d8cb0fead2599cf1}{00343}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_ab8b56df9ee2d4b75d8cb0fead2599cf1}{DFS}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ inicial)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00344}00344\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo.numVertices\ <\ 1)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00345}00345\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00346}00346\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices-\/>prox)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00347}00347\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00348}00348\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00349}00349\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>codigo\ ==\ inicial\ \&\&\ !atual-\/>visitado)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>visitado\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c|\%d:\ (X:\ \%d,\ Y\ :\ \%d)"{}},\ atual-\/>antena.frequencia,\ atual-\/>codigo,\ atual-\/>antena.x,\ atual-\/>antena.y);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ atual-\/>adjacentes;\ adj;\ adj\ =\ adj-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertAdj\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ adj-\/>codigo);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertAdj\ \&\&\ !vertAdj-\/>visitado)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ -\/>\ "{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_ab8b56df9ee2d4b75d8cb0fead2599cf1}{DFS}}(grafo,\ vertAdj-\/>codigo);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00360}00360\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00361}00361\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00362}00362\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00363}00363\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00364}00364\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00365}00365\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00306}\mbox{\hyperlink{grafo_8c_aa66cfd0a83a884524ef3636d33edce7f}{00306}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_aa66cfd0a83a884524ef3636d33edce7f}{desvisitarTodos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00307}00307\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00308}00308\ \ \ \ \ \ \ \ \ atual-\/>visitado\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00309}00309\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00310}00310\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00311}00311\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00323}\mbox{\hyperlink{grafo_8c_ab8b56df9ee2d4b75d8cb0fead2599cf1}{00323}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_ab8b56df9ee2d4b75d8cb0fead2599cf1}{DFS}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ inicial)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00324}00324\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo.numVertices\ <\ 1)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00325}00325\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00326}00326\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices-\/>prox)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00328}00328\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ grafo.vertices;\ atual;\ atual\ =\ atual-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00329}00329\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>codigo\ ==\ inicial\ \&\&\ !atual-\/>visitado)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>visitado\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c|\%d:\ (X:\ \%d,\ Y\ :\ \%d)"{}},\ atual-\/>antena.frequencia,\ atual-\/>codigo,\ atual-\/>antena.x,\ atual-\/>antena.y);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ atual-\/>adjacentes;\ adj;\ adj\ =\ adj-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertAdj\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ adj-\/>codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertAdj\ \&\&\ !vertAdj-\/>visitado)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ -\/>\ "{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_ab8b56df9ee2d4b75d8cb0fead2599cf1}{DFS}}(grafo,\ vertAdj-\/>codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00340}00340\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00341}00341\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00342}00342\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00343}00343\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00344}00344\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00356}\mbox{\hyperlink{grafo_8c_a282685d236de3fee95905846d570bad3}{00356}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_a282685d236de3fee95905846d570bad3}{BFS}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ inicial)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00357}00357\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo.numVertices\ <\ 1)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00358}00358\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00359}00359\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices-\/>prox)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00360}00360\ \ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00361}00361\ \ \ \ \ \textcolor{keywordtype}{int}\ *fila\ =\ malloc(grafo.numVertices\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00362}00362\ \ \ \ \ \textcolor{keywordflow}{if}\ (!fila)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00363}00363\ \ \ \ \ \textcolor{keywordtype}{int}\ front\ =\ 0,\ rear\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00364}00364\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00365}00365\ \ \ \ \ fila[rear++]\ =\ inicial;}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00366}00366\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00376}\mbox{\hyperlink{grafo_8c_a282685d236de3fee95905846d570bad3}{00376}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_a282685d236de3fee95905846d570bad3}{BFS}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ inicial)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00377}00377\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo.numVertices\ <\ 1)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00378}00378\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00379}00379\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices-\/>prox)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00380}00380\ \ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00381}00381\ \ \ \ \ \textcolor{keywordtype}{int}\ *fila\ =\ malloc(grafo.numVertices\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00382}00382\ \ \ \ \ \textcolor{keywordflow}{if}\ (!fila)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00383}00383\ \ \ \ \ \textcolor{keywordtype}{int}\ front\ =\ 0,\ rear\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00384}00384\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00385}00385\ \ \ \ \ fila[rear++]\ =\ inicial;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00386}00386\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00387}00387\ \ \ \ \ \textcolor{keywordflow}{while}\ (front\ <\ rear)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00388}00388\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ codigo\ =\ fila[front++];}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00389}00389\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ codigo);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00390}00390\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual\ \&\&\ !atual-\/>visitado)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>visitado\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c|\%d:\ (X:\ \%d,\ Y\ :\ \%d)"{}},\ atual-\/>antena.frequencia,\ atual-\/>codigo,\ atual-\/>antena.x,\ atual-\/>antena.y);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ atual-\/>adjacentes;\ adj;\ adj\ =\ adj-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertAdj\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ adj-\/>codigo);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertAdj\ \&\&\ !vertAdj-\/>visitado)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ estaNaFila\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ front;\ k\ <\ rear;\ k++)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fila[k]\ ==\ adj-\/>codigo)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ estaNaFila\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!estaNaFila)\ fila[rear++]\ =\ adj-\/>codigo;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (front\ <\ rear)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ -\/>\ "{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00409}00409\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00410}00410\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00411}00411\ \ \ \ \ free(fila);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00412}00412\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00413}00413\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00367}00367\ \ \ \ \ \textcolor{keywordflow}{while}\ (front\ <\ rear)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00368}00368\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ codigo\ =\ fila[front++];}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00369}00369\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ atual\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00370}00370\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual\ \&\&\ !atual-\/>visitado)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ atual-\/>visitado\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c|\%d:\ (X:\ \%d,\ Y\ :\ \%d)"{}},\ atual-\/>antena.frequencia,\ atual-\/>codigo,\ atual-\/>antena.x,\ atual-\/>antena.y);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ atual-\/>adjacentes;\ adj;\ adj\ =\ adj-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertAdj\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ adj-\/>codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertAdj\ \&\&\ !vertAdj-\/>visitado)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ estaNaFila\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ front;\ k\ <\ rear;\ k++)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fila[k]\ ==\ adj-\/>codigo)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ estaNaFila\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!estaNaFila)\ fila[rear++]\ =\ adj-\/>codigo;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (front\ <\ rear)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ -\/>\ "{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00389}00389\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00390}00390\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00391}00391\ \ \ \ \ free(fila);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00392}00392\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00393}00393\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00407}\mbox{\hyperlink{grafo_8c_a501113199c993991ba9a3ea7dfbdf62d}{00407}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_a501113199c993991ba9a3ea7dfbdf62d}{listarTodosCaminhosAux}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ atual,\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{final},\ \textcolor{keywordtype}{int}*\ caminho,\ \textcolor{keywordtype}{int}\ profundidade)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00408}00408\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vert\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ atual);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00409}00409\ \ \ \ \ \textcolor{keywordflow}{if}\ (!vert)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00411}00411\ \ \ \ \ vert-\/>visitado\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00412}00412\ \ \ \ \ caminho[profundidade]\ =\ atual;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00413}00413\ \ \ \ \ profundidade++;}
 \DoxyCodeLine{\Hypertarget{grafo_8c_source_l00414}00414\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00427}\mbox{\hyperlink{grafo_8c_a501113199c993991ba9a3ea7dfbdf62d}{00427}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_a501113199c993991ba9a3ea7dfbdf62d}{listarTodosCaminhosAux}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ atual,\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{final},\ \textcolor{keywordtype}{int}*\ caminho,\ \textcolor{keywordtype}{int}\ profundidade)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00428}00428\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vert\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ atual);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00429}00429\ \ \ \ \ \textcolor{keywordflow}{if}\ (!vert)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00430}00430\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00431}00431\ \ \ \ \ vert-\/>visitado\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00432}00432\ \ \ \ \ caminho[profundidade]\ =\ atual;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00433}00433\ \ \ \ \ profundidade++;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00434}00434\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00435}00435\ \ \ \ \ \textcolor{keywordflow}{if}\ (atual\ ==\ \textcolor{keyword}{final})\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00436}00436\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Caminho:\ "{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00437}00437\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ profundidade;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d"{}},\ caminho[i]);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ profundidade\ -\/\ 1)\ printf(\textcolor{stringliteral}{"{}\ -\/>\ "{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00440}00440\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00441}00441\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00442}00442\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00443}00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!vert-\/>adjacentes)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00444}00444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ vert-\/>adjacentes;\ adj;\ adj\ =\ adj-\/>prox)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertAdj\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ adj-\/>codigo);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertAdj\ \&\&\ !vertAdj-\/>visitado)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_a501113199c993991ba9a3ea7dfbdf62d}{listarTodosCaminhosAux}}(grafo,\ adj-\/>codigo,\ \textcolor{keyword}{final},\ caminho,\ profundidade);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00449}00449\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00450}00450\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00451}00451\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00452}00452\ \ \ \ \ vert-\/>visitado\ =\ 0;\ \textcolor{comment}{//\ Backtrack}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00453}00453\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00454}00454\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00455}00455\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00466}\mbox{\hyperlink{grafo_8c_a5f5f0d13e00ab9e0c7d8211a3a962a8e}{00466}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_a5f5f0d13e00ab9e0c7d8211a3a962a8e}{listarTodosCaminhos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ inicial,\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{final})\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00467}00467\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo.numVertices\ <\ 1)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00468}00468\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00469}00469\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices-\/>prox)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00470}00470\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00471}00471\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertInicial\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ inicial);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00472}00472\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertFinal\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ \textcolor{keyword}{final});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00473}00473\ \ \ \ \ \textcolor{keywordflow}{if}\ (!vertInicial\ ||\ !vertFinal)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00474}00474\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Um\ dos\ vertices\ nao\ existe\ no\ grafo.\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00475}00475\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00476}00476\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00477}00477\ \ \ \ \ \textcolor{keywordflow}{if}\ (vertInicial-\/>antena.frequencia\ !=\ vertFinal-\/>antena.frequencia)\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00478}00478\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}As\ antenas\ nao\ tem\ a\ mesma\ frequencia.\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00479}00479\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00480}00480\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00481}00481\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00482}00482\ \ \ \ \ \textcolor{keywordflow}{if}\ (inicial\ ==\ \textcolor{keyword}{final})\ \{}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00483}00483\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Caminho:\ \%d\(\backslash\)n"{}},\ inicial);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00484}00484\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00485}00485\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00486}00486\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00487}00487\ \ \ \ \ \textcolor{keywordtype}{int}*\ caminho\ =\ malloc(grafo.numVertices\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00488}00488\ \ \ \ \ \textcolor{keywordflow}{if}\ (!caminho)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00489}00489\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00490}00490\ \ \ \ \ \mbox{\hyperlink{grafo_8c_a501113199c993991ba9a3ea7dfbdf62d}{listarTodosCaminhosAux}}(grafo,\ inicial,\ \textcolor{keyword}{final},\ caminho,\ 0);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00491}00491\ }
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00492}00492\ \ \ \ \ free(caminho);}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00493}00493\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00494}00494\ \}}
-\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00495}00495\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00415}00415\ \ \ \ \ \textcolor{keywordflow}{if}\ (atual\ ==\ \textcolor{keyword}{final})\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00416}00416\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Caminho:\ "{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00417}00417\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ profundidade;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d"{}},\ caminho[i]);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ profundidade\ -\/\ 1)\ printf(\textcolor{stringliteral}{"{}\ -\/>\ "{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00420}00420\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00421}00421\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00422}00422\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00423}00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!vert-\/>adjacentes)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00424}00424\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ adj\ =\ vert-\/>adjacentes;\ adj;\ adj\ =\ adj-\/>prox)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertAdj\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ adj-\/>codigo);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertAdj\ \&\&\ !vertAdj-\/>visitado)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{grafo_8c_a501113199c993991ba9a3ea7dfbdf62d}{listarTodosCaminhosAux}}(grafo,\ adj-\/>codigo,\ \textcolor{keyword}{final},\ caminho,\ profundidade);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00429}00429\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00430}00430\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00432}00432\ \ \ \ \ vert-\/>visitado\ =\ 0;\ \textcolor{comment}{//\ Backtrack}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00433}00433\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00434}00434\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00435}00435\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00446}\mbox{\hyperlink{grafo_8c_a5f5f0d13e00ab9e0c7d8211a3a962a8e}{00446}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{grafo_8c_a5f5f0d13e00ab9e0c7d8211a3a962a8e}{listarTodosCaminhos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}\ grafo,\ \textcolor{keywordtype}{int}\ inicial,\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{final})\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00447}00447\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo.numVertices\ <\ 1)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00448}00448\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00449}00449\ \ \ \ \ \textcolor{keywordflow}{if}\ (!grafo.vertices-\/>prox)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00450}00450\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00451}00451\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertInicial\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ inicial);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00452}00452\ \ \ \ \ \mbox{\hyperlink{struct_vertice}{Vertice}}*\ vertFinal\ =\ \mbox{\hyperlink{grafo_8c_abd74136facdb68455c04092221b9e979}{encontrarVerticePorCod}}(grafo,\ \textcolor{keyword}{final});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00453}00453\ \ \ \ \ \textcolor{keywordflow}{if}\ (!vertInicial\ ||\ !vertFinal)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00454}00454\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Um\ dos\ vertices\ nao\ existe\ no\ grafo.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00455}00455\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00456}00456\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00457}00457\ \ \ \ \ \textcolor{keywordflow}{if}\ (vertInicial-\/>antena.frequencia\ !=\ vertFinal-\/>antena.frequencia)\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00458}00458\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}As\ antenas\ nao\ tem\ a\ mesma\ frequencia.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00459}00459\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00460}00460\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00461}00461\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00462}00462\ \ \ \ \ \textcolor{keywordflow}{if}\ (inicial\ ==\ \textcolor{keyword}{final})\ \{}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00463}00463\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Caminho:\ \%d\(\backslash\)n"{}},\ inicial);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00464}00464\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00465}00465\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00467}00467\ \ \ \ \ \textcolor{keywordtype}{int}*\ caminho\ =\ malloc(grafo.numVertices\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00468}00468\ \ \ \ \ \textcolor{keywordflow}{if}\ (!caminho)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00470}00470\ \ \ \ \ \mbox{\hyperlink{grafo_8c_a501113199c993991ba9a3ea7dfbdf62d}{listarTodosCaminhosAux}}(grafo,\ inicial,\ \textcolor{keyword}{final},\ caminho,\ 0);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00472}00472\ \ \ \ \ free(caminho);}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00473}00473\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00474}00474\ \}}
+\DoxyCodeLine{\Hypertarget{grafo_8c_source_l00475}00475\ \textcolor{preprocessor}{\#pragma\ endregion}}
 
 \end{DoxyCode}

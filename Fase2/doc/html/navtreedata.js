@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "Fase 2", "index.html", [
     [ "ProjetoEDA", "index.html#autotoc_md0", [
-      [ "Arquivos do Projeto", "index.html#autotoc_md1", null ]
+      [ "Ficheiros do Projeto", "index.html#autotoc_md1", null ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],

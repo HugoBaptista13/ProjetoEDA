@@ -34,28 +34,6 @@ typedef struct Nefasto {
 } Nefasto;
 
 /**
- * @brief Estrutura de dados para uma lista de antenas
- * @struct Antenas
- * @param antena Estrutura de dados da antena
- * @param prox Apontador para a próxima antena
- */
-typedef struct Antenas {
-    Antena antena;
-    struct Antenas *prox;
-} Antenas;
-
-/**
- * @brief Estrutura de dados para uma lista de nefastos
- * @struct Nefastos
- * @param nefasto Estrutura de dados do nefasto
- * @param prox Apontador para o próximo nefasto
- */
-typedef struct Nefastos {
-    Nefasto nefasto;
-    struct Nefastos *prox;
-} Nefastos;
-
-/**
  * @brief Estrutura de dados para as adjacências do grafo
  * @struct Adjacente
  * @param codigo Código do vértice adjacente

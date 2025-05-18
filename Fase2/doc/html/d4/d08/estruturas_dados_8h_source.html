@@ -124,52 +124,36 @@ $(function(){initNavTree('d4/d08/estruturas_dados_8h_source.html','../../'); ini
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>} <a class="code hl_struct" href="../../d5/dd9/struct_nefasto.html">Nefasto</a>;</div>
 </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d0/de4/struct_antenas.html">   42</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../d0/de4/struct_antenas.html">Antenas</a> {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_struct" href="../../d6/dbb/struct_antena.html">Antena</a> antena;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">struct </span><a class="code hl_struct" href="../../d0/de4/struct_antenas.html">Antenas</a> *prox;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>} <a class="code hl_struct" href="../../d0/de4/struct_antenas.html">Antenas</a>;</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d3/d9d/struct_adjacente.html">   43</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> codigo;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">struct </span><a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* prox;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>} <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>;</div>
 </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
-<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d0/dae/struct_nefastos.html">   53</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../d0/dae/struct_nefastos.html">Nefastos</a> {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_struct" href="../../d5/dd9/struct_nefasto.html">Nefasto</a> nefasto;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">struct </span><a class="code hl_struct" href="../../d0/dae/struct_nefastos.html">Nefastos</a> *prox;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>} <a class="code hl_struct" href="../../d0/dae/struct_nefastos.html">Nefastos</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d8/d9e/struct_vertice.html">   61</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a> {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">int</span> codigo;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_struct" href="../../d6/dbb/struct_antena.html">Antena</a> antena;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> visitado;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adjacentes;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">struct </span><a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* prox;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>} <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>;</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d3/d9d/struct_adjacente.html">   65</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a> {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">int</span> codigo;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">struct </span><a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* prox;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>} <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="};">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d7/d62/struct_grafo.html">   77</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../d7/d62/struct_grafo.html">Grafo</a> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertices;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">int</span> numVertices;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>} <a class="code hl_struct" href="../../d7/d62/struct_grafo.html">Grafo</a>;</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
-<div class="foldopen" id="foldopen00083" data-start="{" data-end="};">
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="../../d8/d9e/struct_vertice.html">   83</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a> {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">int</span> codigo;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_struct" href="../../d6/dbb/struct_antena.html">Antena</a> antena;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">int</span> visitado;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_struct" href="../../d3/d9d/struct_adjacente.html">Adjacente</a>* adjacentes;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">struct </span><a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* prox;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>} <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>;</div>
-</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="foldopen" id="foldopen00099" data-start="{" data-end="};">
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="../../d7/d62/struct_grafo.html">   99</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../d7/d62/struct_grafo.html">Grafo</a> {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_struct" href="../../d8/d9e/struct_vertice.html">Vertice</a>* vertices;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">int</span> numVertices;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>} <a class="code hl_struct" href="../../d7/d62/struct_grafo.html">Grafo</a>;</div>
-</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct_adjacente_html"><div class="ttname"><a href="../../d3/d9d/struct_adjacente.html">Adjacente</a></div><div class="ttdoc">Estrutura de dados para as adjacências do grafo.</div><div class="ttdef"><b>Definition</b> <a href="#l00065">estruturasDados.h:65</a></div></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astruct_adjacente_html"><div class="ttname"><a href="../../d3/d9d/struct_adjacente.html">Adjacente</a></div><div class="ttdoc">Estrutura de dados para as adjacências do grafo.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">estruturasDados.h:43</a></div></div>
 <div class="ttc" id="astruct_antena_html"><div class="ttname"><a href="../../d6/dbb/struct_antena.html">Antena</a></div><div class="ttdoc">Estrutura de dados para as antenas.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">estruturasDados.h:20</a></div></div>
-<div class="ttc" id="astruct_antenas_html"><div class="ttname"><a href="../../d0/de4/struct_antenas.html">Antenas</a></div><div class="ttdoc">Estrutura de dados para uma lista de antenas.</div><div class="ttdef"><b>Definition</b> <a href="#l00042">estruturasDados.h:42</a></div></div>
-<div class="ttc" id="astruct_grafo_html"><div class="ttname"><a href="../../d7/d62/struct_grafo.html">Grafo</a></div><div class="ttdoc">Estrutura de dados para o grafo.</div><div class="ttdef"><b>Definition</b> <a href="#l00099">estruturasDados.h:99</a></div></div>
+<div class="ttc" id="astruct_grafo_html"><div class="ttname"><a href="../../d7/d62/struct_grafo.html">Grafo</a></div><div class="ttdoc">Estrutura de dados para o grafo.</div><div class="ttdef"><b>Definition</b> <a href="#l00077">estruturasDados.h:77</a></div></div>
 <div class="ttc" id="astruct_nefasto_html"><div class="ttname"><a href="../../d5/dd9/struct_nefasto.html">Nefasto</a></div><div class="ttdoc">Estrutura de dados para os nefastos.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">estruturasDados.h:32</a></div></div>
-<div class="ttc" id="astruct_nefastos_html"><div class="ttname"><a href="../../d0/dae/struct_nefastos.html">Nefastos</a></div><div class="ttdoc">Estrutura de dados para uma lista de nefastos.</div><div class="ttdef"><b>Definition</b> <a href="#l00053">estruturasDados.h:53</a></div></div>
-<div class="ttc" id="astruct_vertice_html"><div class="ttname"><a href="../../d8/d9e/struct_vertice.html">Vertice</a></div><div class="ttdoc">Estrutura de dados para os vértices do grafo.</div><div class="ttdef"><b>Definition</b> <a href="#l00083">estruturasDados.h:83</a></div></div>
+<div class="ttc" id="astruct_vertice_html"><div class="ttname"><a href="../../d8/d9e/struct_vertice.html">Vertice</a></div><div class="ttdoc">Estrutura de dados para os vértices do grafo.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">estruturasDados.h:61</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

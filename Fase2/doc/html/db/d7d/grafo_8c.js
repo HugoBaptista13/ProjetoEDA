@@ -6,7 +6,6 @@ var grafo_8c =
     [ "criarAdjacente", "db/d7d/grafo_8c.html#ad70ad4a6e6f10d67103bb24c810229e2", null ],
     [ "criarAntena", "db/d7d/grafo_8c.html#aeff493120db5febaabe3f72dfa55a0c5", null ],
     [ "criarGrafo", "db/d7d/grafo_8c.html#a18f15146c4b8e69b5462bd86933a4a6e", null ],
-    [ "criarNefasto", "db/d7d/grafo_8c.html#a68122fa78c544a7fa14cf79907db815c", null ],
     [ "criarVertice", "db/d7d/grafo_8c.html#a3ae198be169a402a0dfe97ce76574771", null ],
     [ "desvisitarTodos", "db/d7d/grafo_8c.html#aa66cfd0a83a884524ef3636d33edce7f", null ],
     [ "desvisitarVertice", "db/d7d/grafo_8c.html#ada1c562921870b63d244f7d59db172de", null ],
